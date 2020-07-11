@@ -1,0 +1,23 @@
+.content-create {
+    display: flex;
+    width: $default-width;
+    height: $default-width;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+
+    .bg-purple {
+        width: $default-width;
+        height: $default-width / 3;
+    }
+
+    .wrapper-form {
+        margin: 0 $spacer-5;
+        margin-top: -$spacer-4;
+        height: $default-width / 3;
+
+        textarea {
+            width: $default-width;
+            height: $default-width;
+        }
+    }
+}

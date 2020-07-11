@@ -1,0 +1,120 @@
+.singin {
+    width: $default-width;
+    height: $default-width;
+
+    .container {
+        display: flex;
+        align-items: center;
+        width: $default-width;
+        height: $default-width;
+        justify-content: center;
+        flex-flow: column nowrap;
+
+        .wrapper-inputs {
+            z-index: 1;
+            height: auto;
+            display: flex;
+            padding: $spacer-6;
+            flex-flow: column nowrap;
+            width: $default-width / 3.6;
+            background: $white-default;
+
+            @include mediaLg {
+                width: 35%;
+            }
+
+
+            @include mediaMd {
+                width: 55%;
+            }
+
+
+            @include mediaSm {
+                width: 100%;
+            }
+
+
+            @include media-iphone-4 {
+                height: 70%;
+                margin-top: 3rem;
+            }
+
+
+            .title-form {
+                color: $primary-color;
+                margin-bottom: $spacer-3;
+            }
+
+            .input-container {
+                margin: auto;
+                position: relative;
+                width: $default-width;
+                margin-bottom: $spacer-5;
+
+                .label {
+                    left: 0;
+                    top: 20px;
+                    cursor: text;
+                    font-size: 14px;
+                    font-weight: 500;
+                    position: absolute;
+                    transform-origin: 0 0;
+                    color: $primary-color;
+                    transition: all .25s ease-in-out;
+                }
+
+                .border {
+                    left: 0;
+                    bottom: 0;
+                    z-index: 1;
+                    height: 2px;
+                    position: absolute;
+                    transform: scaleX(0);
+                    transform-origin: 0 0;
+                    width: $default-width;
+                    background: $default-color;
+                    transition: all .4s ease-in-out;
+                }
+
+                input {
+                    border: 0;
+                    z-index: 1;
+                    width: 100%;
+                    height: 45px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    background: none;
+                    border-radius: 0;
+                    padding: 12px 0 0;
+                    position: relative;
+                    font-family: inherit;
+                    color: $default-color;
+                    -webkit-appearance: none;
+                    transition: all .4s ease-in-out;
+                    border-bottom: 2px solid rgba($primary-color, 0.5);
+
+                    &:not(:placeholder-shown) + span {
+                        top: 15px;
+                        color: $primary-color;
+                        transform: translateY(-26px) scale(0.75);
+                    }
+
+                    &:focus {
+                        outline: none;
+                        background: none;
+
+                        + span {
+                            top: 15px;
+                            color: $default-color;
+                            transform: translateY(-26px) scale(0.75);
+
+                            + .border {
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,585 @@
+.dashboard {
+    right: 0;
+    z-index: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    font-weight: 500;
+    background: $bg_4;
+    flex-flow: column;
+    position: absolute;
+    align-items: center;
+    font-family: 'Roboto', sans-serif, Helvetica, Arial;
+    width: calc(#{$default-width} - 220px);
+
+    //==========================================
+
+    p, span, a, div, h1, h2, h3, h4, input, label, textarea {
+        &::selection {
+            background: $select-color;
+            color: white;
+        }
+    }
+
+    img::selection {
+        background: rgba($select-color, 0.5);
+        color: white;
+    }
+
+    //==========================================
+
+    @include mediaXL {
+        width: calc(#{$default-width} - 205px);
+    }
+
+
+    @include mediaLg {
+        width: calc(#{$default-width} - 190px);
+    }
+
+
+    @include mediaMd {
+        width: $default-width;
+    }
+
+
+    .wrapper-items {
+        display: flex;
+        width: 90%;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+        margin-top: $spacer-6 * 1.8;
+
+        @include mediaMd {
+            height: 90%;
+            align-items: center;
+            margin-top: 5.5rem;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+
+        @include mediaXSm {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 4.5rem;
+            padding-top: 3.5rem;
+            padding-bottom: 4rem;
+        }
+
+
+        @include media-iphone-4 {
+            padding-bottom: 3rem;
+            padding-top: 3rem;
+        }
+
+
+        .header-section {
+            display: flex;
+            flex-flow: row nowrap;
+            width: $default-width;
+            margin-bottom: $spacer-4;
+            justify-content: flex-start;
+
+            @include mediaMd {
+                left: 0;
+                right: 0;
+                top: 6rem;
+                z-index: 2;
+                margin: 0 auto;
+                position: fixed;
+                height: 3rem;
+                background: $bg_4;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+            @include mediaXSm {
+                top: 4.5rem;
+            }
+
+
+            @include media-iphone-4 {
+                top: 3rem;
+            }
+
+
+            .title {
+                font-size: 20px;
+                color: #444444;
+                letter-spacing: .6px;
+                font-family: 'Roboto', sans-serif, Helvetica, Arial;
+
+                @include mediaXSm {
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #888888;
+                    text-transform: none;
+                }
+            }
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            width: $default-width;
+            margin-bottom: 0.5rem;
+            font: 400 14px 'Roboto';
+            padding: 1rem 0.5rem 0.5rem 0.5rem;
+            justify-content: space-between;
+            border-top: 1px solid rgba($black-default, 0.12);
+
+            @include mediaMd {
+                border: 0;
+                width: 100%;
+                max-height: 6rem;
+                padding: 1rem;
+                position: relative;
+                background: #dfe0e2;
+                margin-bottom: 1rem;
+                border-radius: 50px;
+            }
+
+
+            @include mediaXSm {
+                padding: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+
+            .content-item {
+                flex: 1 1 ($default-width / 4);
+                display: flex;
+                align-items: center;
+
+                &.link-item {
+                    .post-icon {
+                        flex: none;
+                        width: 48px;
+                        height: 48px;
+                        display: flex;
+                        overflow: hidden;
+                        position: relative;
+                        border-radius: 100%;
+                        margin-right: 1.5rem;
+                        align-items: center;
+                        justify-content: center;
+
+                        .img-post {
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+
+                            .post-picture {
+                                width: 100%;
+                                height: auto;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                margin: auto;
+                                position: absolute;
+                            }
+                        }
+
+                        .empty-icon {
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            margin: auto;
+                            position: absolute;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: -1;
+
+                            svg {
+                                width: 40px;
+                                height: auto;
+                            }
+                        }
+                    }
+
+                    .post-title {
+                        .title {
+                            color: $second;
+                            font-size: 18px;
+                            font-weight: 500;
+                            transition: .25s color ease;
+
+                            @include mediaXL {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .post-title {
+                            .title {
+                                color: $hover-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .responsive-link {
+                display: none;
+                width: 80%;
+                height: 100%;
+                position: absolute;
+
+                @include mediaMd {
+                    display: block;
+                }
+
+
+                @include mediaXSm {
+                    width: 65%;
+                }
+            }
+
+            .link-item {
+                flex: 1 1 35%;
+
+                @include mediaLg {
+                    flex: 1 1 40%;
+                }
+
+
+                @include mediaMd {
+                    flex: 1 1 44%;
+                }
+            }
+
+            .excerpt {
+                flex: 1 1 50%;
+                margin: 0 $spacer-1;
+
+                @include mediaLg {
+                    flex: 1 1 40%;
+                }
+
+
+                @include mediaMd {
+                    flex: 1 1 38%;
+                }
+
+
+                @include mediaXSm {
+                    display: none;
+                }
+            }
+
+            .date {
+                flex: 1 1 20%;
+                margin-right: 1rem;
+
+                @include mediaLg {
+                    font-size: 12px;
+                }
+
+
+                @include mediaMd {
+                    display: none;
+                }
+            }
+
+            .options-item {
+                flex: 1 1 15%;
+            }
+
+            .options-item {
+                display: flex;
+                justify-content: flex-end;
+
+                @include mediaMd {
+                    .options-post:nth-child(1) {
+                        display: none;
+                    }
+                }
+
+
+                .options-post {
+                    display: flex;
+                    cursor: pointer;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                a {
+                    margin-right: $spacer-1;
+                }
+
+                button {
+                    background: transparent;
+                }
+
+                .menu-icon {
+                    width: 15px;
+                    margin-right: 15px;
+
+                    &.show {
+                        svg {
+                            stroke-width: 2.5px;
+
+                            circle {
+                                fill: $grey_1;
+                                stroke-width: 1px;
+                            }
+                        }
+                    }
+
+                    &.edit {
+                        svg {
+                            stroke-width: 2.3px;
+                        }
+                    }
+
+                    &.delete {
+                        svg {
+                            stroke-width: 2.4px;
+
+                            &:hover {
+                                color: $fifth;
+                            }
+                        }
+                    }
+
+                    svg {
+                        width: 20px;
+                        color: $grey_1;
+                        transition: .2s color ease;
+
+                        circle {
+                            transition: .2s fill ease;
+                        }
+
+                        #Dribbble-Dark-Preview {
+                            fill: $grey_1;
+                        }
+
+                        &:hover {
+                            color: $hover-color;
+
+                            circle {
+                                fill: $hover-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-items-wrapper {
+            margin-top: $spacer-2;
+            width: $default-width;
+
+            @include mediaMd {
+                left: 0;
+                width: 100%;
+                bottom: 0rem;
+                margin: 0 auto;
+                position: fixed;
+                background: $bg_4;
+            }
+
+
+            .ngx-pagination {
+                display: flex;
+                margin: 2px 0;
+                flex-flow: row nowrap;
+                width: $default-width;
+                justify-content: flex-end;
+                border-radius: $border-radius;
+
+                @include mediaMd {
+                    margin: 0;
+                    height: 4rem;
+                    justify-content: center;
+                    align-items: center;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &.small-screen {
+                            display: none;
+                        }
+                    }
+                }
+
+
+                @include media-iphone-4 {
+                    height: 3rem;
+                }
+
+
+                > .ng-star-inserted {
+                    font: 400 14px 'Roboto';
+                    border: 1px solid rgba($second, 0.12);
+
+                    @include mediaMd {
+                        border: none;
+                    }
+
+
+                    &.pagination-previous {
+                        border-right: none;
+                        border-top-left-radius: $border-radius;
+                        border-bottom-left-radius: $border-radius;
+
+                        @include mediaMd {
+                            font-size: 18px;
+                            font-weight: 500;
+                            padding: 0;
+                            color: #eee;
+                            background-color: $primary;
+                            border-radius: 100%;
+
+                            &::before {
+                                content: '<';
+                                margin: 0;
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                font-size: 22px;
+                                align-items: center;
+                                justify-content: center;
+                            }
+
+                            span {
+                                display: none;
+                            }
+                        }
+
+
+                        @include mediaXSm {
+                            &::before {
+                                font-size: 20px;
+                            }
+                        }
+
+
+                        @include mediaXXSm {
+                            &::before {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+
+                    &.current {
+                        background: $btn-hover-acent;
+
+                        @include mediaMd {
+                            background: transparent;
+                            color: #444444;
+                            font-size: 18px;
+                            font-weight: 500;
+                            padding: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 22px;
+                            margin: 0 .5rem;
+                        }
+
+
+                        @include mediaXSm {
+                            font-size: 18px;
+                        }
+
+
+                        @include mediaXXSm {
+                            font-size: 16px;
+                        }
+                    }
+
+                    &.pagination-next {
+                        border-left: none;
+                        border-top-right-radius: $border-radius;
+                        border-bottom-right-radius: $border-radius;
+
+                        @include mediaMd {
+                            font-size: 18px;
+                            font-weight: 500;
+                            padding: 0;
+                            color: #eee;
+                            background-color: $primary;
+                            border-radius: 100%;
+
+                            span {
+                                display: none;
+                            }
+
+                            &::after {
+                                content: '>';
+                                font-size: 22px;
+                                margin: 0;
+                                display: flex;
+                                font-size: 22px;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                        }
+
+
+                        @include mediaXSm {
+                            &::after {
+                                font-size: 20px;
+                            }
+                        }
+
+
+                        @include mediaXXSm {
+                            &::after {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+
+                    &.pagination-next, &.pagination-previous, &.current {
+                        @include mediaMd {
+                            width: 1.75rem;
+                            height: 1.75rem;
+                        }
+
+
+                        @include mediaXXSm {
+                            width: 1.25rem;
+                            height: 1.25rem;
+                        }
+                    }
+                }
+
+                .pagination-next, .pagination-previous {
+                    &.disabled {
+                        background: #dbdbdb !important;
+                        color: #fafafa !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .card {
+        background: $white-default;
+        border-radius: $border-radius;
+        color: rgba($black-default, 0.87);
+        box-shadow: $Shadow_2;
+
+        @include mediaMd {
+            &.wrapper-items {
+                box-shadow: none;
+                background-color: transparent;
+            }
+        }
+    }
+}

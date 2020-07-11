@@ -1,0 +1,861 @@
+.nav {
+    height: auto;
+    z-index: 10003;
+    position: fixed;
+    width: $menu-width;
+
+    &.white {
+        .header-navbar {
+            .logo-wrapper {
+                a {
+                    &.logo-content {
+                        .logo {
+                            svg {
+                                width: $menu-width;
+
+                                .cls-1 {
+                                    fill: $white-default;
+                                }
+
+                                .cls-2 {
+                                    fill: $white-default;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .burger-menu {
+                &.active {
+                    .burger-container {
+                        .burger-inner {
+                            &:before,
+                            &:after {
+                                border: $burgerBarHeight solid $primary-color;
+                            }
+                        }
+                    }
+                }
+
+                .burger-container {
+                    .burger-inner {
+                        border: $burgerBarHeight solid $white-default;
+                        transition: border 0s ease-in .4s;
+
+                        @include mediaMd {
+                            border: 2px solid $white-default;
+                        }
+
+
+                        @include media-iphone-4 {
+                            border: 1px solid $white-default;
+                        }
+
+
+                        &:before,
+                        &:after {
+                            border: $burgerBarHeight solid $white-default;
+                            transition: top 0.2s ease-in 0.32s, transform 0.2s ease-in, border 0s ease .4s;
+
+                            @include mediaMd {
+                                border: 2px solid $white-default;
+                            }
+
+
+                            @include media-iphone-4 {
+                                border: 1px solid $white-default;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-navbar {
+        display: flex;
+        align-items: center;
+        flex-flow: row nowrap;
+        padding-left: $spacer-5 * 5.5;
+        padding-right: $spacer-5 * 5.5;
+        justify-content: space-between;
+
+        @include mediaXL {
+            padding: 0 12%;
+        }
+
+
+        @include mediaMd {
+            padding: 1rem;
+        }
+
+
+        @include mediaXSm {
+            padding-top: 1rem;
+            padding-bottom: 2.5rem;
+        }
+
+
+        @include mediaXSm-large {
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+        }
+
+
+        @include media-iphone-4 {
+            padding: 1rem;
+        }
+
+
+        .gradient-white {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 15%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .logo-wrapper {
+            margin: 0;
+
+            @include mediaMd {
+                margin-top: 1.5rem;
+                margin-left: -0.3rem;
+            }
+
+
+            @include mediaXSm {
+                margin-top: .5rem;
+            }
+
+
+            a {
+                &.logo-content {
+                    .logo {
+                        width: $spacer-5 * 2.2;
+                        height: auto;
+
+                        @include mediaMd {
+                            width: 4.6rem;
+                        }
+
+
+                        @include media-iphone-4 {
+                            width: 3.5rem;
+                        }
+
+
+                        svg {
+                            width: $menu-width;
+
+                            @include mediaMd {
+                                width: 72px;
+                            }
+
+
+                            .cls-1 {
+                                fill: $primary-color;
+                            }
+
+                            .cls-2 {
+                                fill: $default-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .burger-menu {
+            z-index: 10000;
+            cursor: pointer;
+            padding: $spacer-3;
+            width: $burgerWidth;
+            height: $burgerWidth;
+            right: $menu-width / 4 - 10;
+            background-color: $none-color;
+            transition: background .3s ease-in-out;
+
+            @include mediaLg {
+                width: 105px;
+                height: 95px;
+            }
+
+
+            @include mediaMd {
+                padding: 1.5rem 1rem;
+                width: 72px;
+                height: 72px;
+            }
+
+
+            @include mediaXSm {
+                padding: 1rem;
+                width: 64px;
+                height: 58px;
+            }
+
+
+            @include media-iphone-4 {
+                width: 56px;
+                height: 56px;
+                padding: 1rem;
+            }
+
+
+            .burger-container {
+                position: relative;
+
+                .burger-inner {
+                    left: 0px;
+                    top: 20px;
+                    width: $menu-width;
+                    position: absolute;
+                    transition: border .2s ease-in .2s;
+                    border: $burgerBarHeight solid $primary-color;
+
+                    @include mediaLg {
+                        top: 10px;
+                    }
+
+
+                    @include media-iphone-4 {
+                        border: 1px solid $primary-color;
+                    }
+
+
+                    &:before,
+                    &:after {
+                        content: '';
+                        width: $menu-width;
+                        position: absolute;
+                        left: -$burgerBarHeight;
+                        border: $burgerBarHeight solid $primary-color;
+                        transition: top 0.2s ease-in 0.32s, transform 0.2s ease-in, border .2s ease-in .2s;
+
+                        @include media-iphone-4 {
+                            border: 1px solid $primary-color;
+                        }
+                    }
+
+                    &:before {
+                        top: -13px;
+
+                        @include mediaMd {
+                            top: -13px;
+                        }
+
+
+                        @include mediaXXSm {
+                            top: -12px;
+                        }
+
+
+                        @include media-iphone-4 {
+                            left: -1px;
+                            top: -10px;
+                        }
+                    }
+
+                    &:after {
+                        top: 7px;
+
+                        @include mediaMd {
+                            top: 8px;
+                        }
+
+
+                        @include media-iphone-4 {
+                            left: -1px;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                background-color: $white-default;
+                transition: background .3s ease-in-out .4s;
+
+                @include mediaMd {
+                    background-color: transparent;
+                }
+
+
+                .burger-container {
+                    .burger-inner {
+                        border-color: transparent;
+                        transition: border-color ease-in .1s;
+
+                        &:before {
+                            top: -$burgerBarHeight;
+                            transform: rotate(-45deg);
+                            transition: top ease-out .2s, transform .2s ease-out .32s, border 0s ease .3s;
+                        }
+
+                        &:after {
+                            top: -$burgerBarHeight;
+                            transform: rotate(45deg);
+                            transition: top ease-out .2s, transform .2s ease-out .32s, border 0s ease .3s;
+                        }
+                    }
+                }
+            }
+
+            &.product {
+                &.active {
+                    background-color: $white-default;
+                    transition: background .3s ease-in-out .4s;
+
+                    @include mediaMd {
+                        background-color: transparent;
+                    }
+
+
+                    .burger-container {
+                        .burger-inner {
+                            border-color: transparent;
+                            transition: border-color ease-in .1s;
+
+                            &:before,
+                            &:after {
+                                border: $burgerBarHeight solid $primary-color;
+                            }
+                        }
+                    }
+                }
+
+                .burger-container {
+                    .burger-inner {
+                        transition: border .1s ease-in .2s;
+                        border: $burgerBarHeight solid $white-default;
+
+                        @include mediaMd {
+                            border: 2px solid $primary-color;
+                        }
+
+
+                        @include media-iphone-4 {
+                            border: 1px solid $primary-color;
+                        }
+
+
+                        &:before,
+                        &:after {
+                            border: $burgerBarHeight solid $white-default;
+
+                            @include mediaMd {
+                                border: 2px solid $primary-color;
+                            }
+
+
+                            @include media-iphone-4 {
+                                border: 1px solid $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 0;
+        display: flex;
+        overflow: hidden;
+        position: absolute;
+        align-content: center;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        background-color: $grey-light;
+        transform: translate(0, -$menu-width);
+        transition-delay: .2s;
+        transition-duration: .4s;
+        transition-property: height, transform;
+        transition-timing-function: cubic-bezier(0.75, 0.06, 0.12, 0.88);
+
+        &.open {
+            height: 100vh;
+            transform: translate(0, 0);
+            transition-delay: .2s;
+            transition-duration: .5s;
+            transition-property: heigth, transform;
+            transition-timing-function: cubic-bezier(0.75, 0.06, 0.12, 0.88);
+        }
+
+        .slogan-wrapper {
+            display: flex;
+            width: $menu-width / 2;
+            flex-flow: column nowrap;
+            background: $default-color;
+            justify-content: flex-start;
+
+            @include mediaMd {
+                display: none;
+                visibility: hidden;
+            }
+
+
+            .slogan-content {
+                display: flex;
+                width: $menu-width;
+                align-items: flex-end;
+                flex-flow: row nowrap;
+                background-size: cover;
+                height: $menu-width / 2;
+                justify-content: flex-start;
+                background-repeat: no-repeat;
+                padding-bottom: $spacer-3 + 3;
+                background-position: top center;
+                background-image: url("assets/img/menu/conduhierro_menu_img_1.png");
+
+                .content-figure {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    padding-right: $spacer-2;
+                    justify-content: flex-end;
+                    width: $menu-width / 2 - 10;
+
+                    svg {
+                        width: $menu-width / 10 + 5;
+                        height: $menu-width / 10 + 5;
+                        margin-bottom: $spacer-3 + 1;
+
+                        #hexagono_outline_red {
+                            stroke-width: 12;
+                            stroke: $default-color;
+                        }
+                    }
+                }
+
+                .slogan {
+                    color: $white-default;
+                    width: $menu-width / 2 + 10;
+                }
+            }
+
+            .slogan-decoration {
+                display: flex;
+                width: $menu-width;
+                flex-flow: row nowrap;
+                height: $menu-width / 2;
+                justify-content: flex-start;
+
+                .decoration-left {
+                    position: relative;
+                    height: $menu-width;
+                    width: $menu-width / 2;
+
+                    .content-figure-1,
+                    .content-figure-2,
+                    .content-figure-3 {
+                        position: absolute;
+                    }
+
+                    .content-figure-1 {
+                        bottom: 0;
+                        left: -($spacer-3 * 8);
+
+                        #linea_trama_1 {
+                            stroke-width: 4;
+                            stroke: $second-color;
+                        }
+                    }
+
+                    .content-figure-2 {
+                        bottom: $spacer-3 + 1;
+                        left: -($spacer-3 * 3);
+
+                        #linea_trama_1 {
+                            stroke-width: 4;
+                            stroke: $white-default;
+                        }
+                    }
+
+                    .content-figure-3 {
+                        left: $spacer-3 * -8;
+                        bottom: $spacer-3 * -3;
+
+                        #linea_trama_1 {
+                            stroke-width: 4;
+                            stroke: $second-color;
+                        }
+                    }
+                }
+
+                .decoration-right {
+                    height: $menu-width;
+                    width: $menu-width / 2;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-color: $grey-second;
+                    background-position: top center;
+                    background-image: url("assets/img/menu/conduhierro_menu_img_2.png");
+                }
+            }
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+            width: $menu-width / 4 + 10;
+            padding-bottom: $spacer-3 * 5;
+            padding-top: .5rem;
+            z-index: 2;
+
+            @include mediaXL {
+                padding-bottom: 5rem;
+            }
+
+
+            @include mediaLg {
+                padding-bottom: 2rem;
+            }
+
+
+            @include mediaMd {
+                width: 100%;
+                padding: 0;
+            }
+
+
+            @include media-iphone-4 {
+                padding: 0;
+            }
+
+
+            .nav-logo {
+                width: $menu-width;
+
+                @include mediaMd {
+                    position: absolute;
+                    top: 2.5rem;
+                    left: 2rem;
+                    width: auto;
+                }
+
+
+                @include mediaXSm {
+                    top: 3rem;
+                }
+
+
+                @include media-iphone-4 {
+                    left: 1rem;
+                    top: 1.5rem;
+                }
+
+
+                .logo-link {
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                    margin-bottom: $spacer-3 + 1;
+
+                    .logo {
+                        height: auto;
+                        width: $menu-width / 4;
+
+                        @include mediaMd {
+                            width: auto;
+                        }
+
+
+                        svg {
+                            width: $menu-width;
+
+                            @include mediaMd {
+                                width: 5rem;
+                            }
+
+
+                            @include mediaXSm {
+                                width: 4.8rem;
+                            }
+
+
+                            @include media-iphone-4 {
+                                width: 3.8rem;
+                            }
+
+
+                            .cls-1 {
+                                fill: $primary-color;
+                            }
+
+                            .cls-2 {
+                                fill: $default-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nav-item {
+                position: relative;
+                padding: 1rem;
+                display: flex;
+                margin-top: 1rem;
+
+                @include mediaXL {
+                    padding: 1rem;
+                }
+
+
+                @include mediaLg {
+                    margin-top: 0;
+                    padding: 1rem;
+                }
+
+
+                @include mediaXXSm {
+                    padding: 1.5rem;
+                }
+
+
+                .nav-link {
+                    color: $primary-color;
+                    padding: $spacer-1 - 0.5;
+                    text-transform: uppercase;
+                    background-color: $none-color;
+                    transition-duration: 0.25s;
+                    transition-property: color, background-color;
+                    transition-timing-function: ease-in-out;
+
+                    @include mediaXXSm {
+                        line-height: 1.5rem;
+                    }
+
+
+                    @include media-iphone-4 {
+                        line-height: .5rem;
+                    }
+
+
+                    &:hover {
+                        color: $white-default;
+                        background-color: $default-color;
+                        transition: .3s color , 0.3s background-color ease-out;
+                    }
+                }
+
+                &:before {
+                    width: 0;
+                    content: '';
+                    position: absolute;
+                    left: $menu-width / 2;
+                    bottom: 0;
+                    border-bottom: 1px solid $second-color;
+                    transition-duration: .25s;
+                    transition-property: left, width;
+                    transition-timing-function: ease;
+                }
+
+                &:hover {
+                    &:before {
+                        left: $menu-width / 3;
+                        width: $menu-width / 3;
+                        transition-duration: .2s;
+                        transition-property: left, width;
+                        transition-timing-function: ease;
+                    }
+                }
+            }
+        }
+
+        .decoration-menu {
+            height: 100%;
+            display: flex;
+            position: relative;
+            align-items: flex-end;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+            width: $menu-width / 4 - 10;
+
+            @include mediaMd {
+                right: 0;
+                top: 0;
+                position: absolute;
+                width: 100%;
+                z-index: -1;
+            }
+
+
+            .vertical-title {
+                height: max-content;
+                max-width: 120%;
+                line-height: .9;
+                position: absolute;
+                transform: rotate(-90deg);
+                top: 28rem;
+                left: -2.5rem;
+                font-size: $spacer-3 * 5 - 1;
+                color: rgba($grey-primary, 0.1);
+
+                @include mediaXL {
+                    left: -3.5rem;
+                    top: 27rem;
+                    font-size: 8rem;
+                }
+
+
+                @include mediaLg {
+                    left: -3rem;
+                    top: 22rem;
+                    font-size: 7rem;
+                }
+
+
+                @include mediaMd {
+                    left: 15.5rem;
+                    top: 22rem;
+                    font-size: 9rem;
+                }
+
+
+                @include mediaSm {
+                    left: 2rem;
+                    top: 17rem;
+                    font-size: 6.5rem;
+                }
+
+
+                @include mediaXSm-large {
+                    left: 1.5rem;
+                    top: 21rem;
+                    font-size: 7rem;
+                }
+
+
+                @include mediaXXSm {
+                    left: 2rem;
+                    top: 15rem;
+                    font-size: 5.5rem;
+                }
+
+
+                @include mediaXXSm-large {
+                    left: 1rem;
+                    top: 23rem;
+                    font-size: 7rem;
+                }
+
+
+                @include media-iphone-4 {
+                    left: 1.5rem;
+                    top: 13rem;
+                    font-size: 5rem;
+                }
+            }
+
+            .content-figure {
+                position: absolute;
+                width: $spacer-3 * 12 + 6;
+                height: $menu-width / 1.5;
+                top: 75%;
+                right: -57%;
+
+                @include mediaXL {
+                    width: 25rem;
+                    right: -63%;
+                }
+
+
+                @include mediaLg {
+                    width: 23rem;
+                    right: -82%;
+                }
+
+
+                @include mediaMd {
+                    right: -17.5%;
+                }
+
+
+                @include mediaXSm {
+                    right: -33%;
+                    top: 82%;
+                }
+
+
+                @include mediaXXSm {
+                    right: -39%;
+                    top: 86%;
+                }
+
+
+                @include mediaXXSm-large {
+                    top: 81%;
+                }
+
+
+                @include media-iphone-4 {
+                    right: -45%;
+                }
+
+
+                svg {
+                    position: absolute;
+                    width: $menu-width;
+                    height: $menu-width;
+                }
+            }
+        }
+
+        .instagram-btn {
+            position: absolute;
+            bottom: 7rem;
+            right: 28%;
+            color: $primary-color;
+            z-index: 3;
+
+            @include mediaXL {
+                right: 26%;
+                bottom: 4rem;
+            }
+
+
+            @include mediaLg {
+                bottom: 2.5rem;
+            }
+
+
+            @include mediaMd {
+                right: 39%;
+                bottom: 3rem;
+            }
+
+
+            @include mediaXSm {
+                bottom: 5rem;
+                right: 33%;
+            }
+
+
+            @include mediaXXSm {
+                bottom: 3rem;
+                right: 31%;
+            }
+
+
+            @include mediaXXSm-large {
+                bottom: 5rem;
+            }
+
+
+            @include media-iphone-4 {
+                bottom: 3rem;
+                right: 29%;
+            }
+
+
+            .instagram-icon {
+                fill: $primary-color;
+            }
+        }
+    }
+}

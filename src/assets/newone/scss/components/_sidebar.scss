@@ -1,0 +1,183 @@
+.wrapper-sidebar {
+    z-index: 1;
+    width: 220px;
+    position: fixed;
+    font-weight: 500;
+    height: $default-width;
+    font-family: 'Roboto', sans-serif, Helvetica, Arial;
+    background: $background_gradient_1;
+
+    //==========================================
+
+    p, span, a, div, h1, h2, h3, h4, input, label, textarea {
+        &::selection {
+            background: $primary;
+            color: white;
+        }
+    }
+
+    //==========================================
+
+    @include mediaXL {
+        width: 205px;
+    }
+
+
+    @include mediaLg {
+        width: 190px;
+    }
+
+
+    @include mediaMd {
+        transform: translate(-$default-width, 0);
+    }
+
+
+    &.create {
+        @include mediaMd {
+            display: none;
+        }
+    }
+
+    .header-sidebar {
+        padding: 0 6px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column nowrap;
+        background: $bg_2;
+        height: $default-width / 4 - 15;
+
+        .link-logo {
+            padding: 10px;
+            font-weight: 600;
+            text-align: center;
+            width: $default-width;
+            color: $white-default;
+        }
+    }
+
+    .wrapper-navbar {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+
+        .adm-navbar {
+            display: flex;
+            height: $default-width / 2 + $default-width / 4;
+
+            .adm-nav {
+                margin: 0;
+                width: $default-width;
+                padding-inline-start: 0;
+
+                li {
+                    &.nav-item {
+                        min-height: 48px;
+                        padding: 0 0 0 6px;
+                        width: $default-width;
+                        border-bottom: 1px solid #373C42;
+
+                        > a {
+                            &.link-item {
+                                width: 100%;
+                                height: 44px;
+                                margin: 8px 0;
+                                padding: 10px;
+                                display: flex;
+                                color: $grey_1;
+                                cursor: pointer;
+                                font-size: 13px;
+                                font-weight: 500;
+                                position: relative;
+                                white-space: nowrap;
+                                align-items: center;
+                                letter-spacing: .4px;
+                                margin-right: -$spacer-1;
+                                border-radius: $border-radius_3;
+                                transition: .25s background-color ease, .25s width ease, .25s padding-left ease, .2s color ease, .1s height ease;
+
+                                &.active,
+                                &:hover,
+                                &:focus {
+                                    width: 108%;
+                                    height: 46px;
+                                    z-index: 10;
+                                    background: $bg_1;
+                                    padding-left: 16px;
+                                    color: $white-default;
+                                    box-shadow: 0 19px 38px rgba($black-default, 0.2), 0 15px 12px rgba($black-default, 0.15);
+                                    transition: .05s background-color ease, .15s width ease, .25s padding-left ease, .2s color ease, .1s height ease;
+
+                                    .menu-icon {
+                                        svg {
+                                            path, polyline, line, rect {
+                                                stroke: currentcolor;
+                                                stroke-width: 2px;
+                                                stroke-linecap: round;
+                                                stroke-linejoin: round;
+                                            }
+
+                                            #Dribbble-Dark-Preview {
+                                                fill: $white-default;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .menu-icon {
+                                    width: 20px;
+                                    display: flex;
+                                    margin-right: 13px;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    svg {
+                                        width: 20px;
+
+                                        #Dribbble-Dark-Preview {
+                                            fill: $grey_1;
+                                            transition: all .2s ease-in-out;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .version {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 8px 0;
+            padding: 10px;
+            display: flex;
+            color: $grey_1;
+            font-size: 12px;
+            font-weight: 500;
+            position: absolute;
+            border-radius: 3px;
+            flex-flow: column nowrap;
+            border-top: 1px solid #373C42;
+
+            &:nth-last-child(1) {
+                margin: 0;
+            }
+
+            span {
+                margin: ($spacer-1 - 0.8) 0;
+
+                > a {
+                    color: rgba($white-default, 0.5);
+                    font: 400 14px 'Roboto';
+
+                    &:hover {
+                        color: $second;
+                    }
+                }
+            }
+        }
+    }
+}

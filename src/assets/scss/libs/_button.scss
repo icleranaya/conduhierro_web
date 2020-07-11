@@ -1,0 +1,205 @@
+// ======================================
+//              Buttons Mixins
+// ======================================
+@mixin btn-style($width, $height, $font-size, $color, $colorHov) {
+    width: $width;
+    display: block;
+    margin: 0 auto;
+    height: $height;
+    text-align: center;
+    position: relative;
+    line-height: $height;
+    transition: color 0.3s ease;
+
+    &:before {
+        bottom: 0;
+        content: "";
+        width: 100%;
+        height: 1px;
+        right: -10px;
+        display: block;
+        background: $color;
+        position: absolute;
+        padding-left: 20px;
+        transition: width 0.3s ease 0.3s,height 0.3s ease,padding 0s ease 0.3s,right 0s ease 0.3s,bottom 0s ease 0.3s,background 0s ease 0.3s;
+    }
+
+    &:after {
+        top: 0;
+        content: "";
+        width: 100%;
+        height: 1px;
+        left: -10px;
+        display: block;
+        background: $color;
+        position: absolute;
+        padding-right: 20px;
+        transition: width 0.3s ease 0.3s,height 0.3s ease,padding 0s ease 0.3s,left 0s ease 0.3s,top 0s ease 0.3s,background 0s ease 0.3s;
+    }
+
+    &:hover {
+        color: $colorHov;
+        transition: color 0.3s ease 0.3s;
+
+        &:before {
+            right: 0;
+            width: 1px;
+            height: 100%;
+            bottom: -10px;
+            padding-left: 0;
+            padding-top: 20px;
+            background: $colorHov;
+            transition: width 0.3s ease,height 0.3s ease 0.3s,padding 0s ease 0.3s,right 0s ease 0.3s,bottom 0s ease 0.3s,background 0s ease 0.3s;
+        }
+
+        &:after {
+            left: 0;
+            top: -10px;
+            width: 1px;
+            height: 100%;
+            padding-right: 0;
+            padding-top: 20px;
+            background: $colorHov;
+            transition: width 0.3s ease,height 0.3s ease 0.3s,padding 0s ease 0.3s,left 0s ease 0.3s,top 0s ease 0.3s,background 0s ease 0.3s;
+        }
+
+        > .line {
+            &:before {
+                top: 0;
+                width: 100%;
+                height: 1px;
+                right: -10px;
+                padding-bottom: 0;
+                padding-right: 20px;
+                background: $colorHov;
+                transition: height 0.3s ease,width 0.3s ease 0.3s,padding 0s ease 0.3s,right 0s ease 0.3s,top 0s ease 0.3s,background 0s ease 0.3s;
+            }
+
+            &:after {
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                left: -10px;
+                padding-top: 0;
+                padding-left: 20px;
+                background: $colorHov;
+                transition: height 0.3s ease,width 0.3s ease 0.3s,padding 0s ease 0.3s,left 0s ease 0.3s,bottom 0s ease 0.3s,background 0s ease 0.3s;
+            }
+        }
+    }
+
+    > .line {
+        width: 0;
+        height: 0;
+        display: block;
+
+        &:before {
+            right: 0;
+            top: -10px;
+            width: 1px;
+            content: "";
+            height: 100%;
+            display: block;
+            background: $color;
+            position: absolute;
+            padding-bottom: 20px;
+            transition: height 0.3s ease 0.3s,width 0.3s ease,padding 0s ease 0.3s,right 0s ease 0.3s,top 0s ease 0.3s,background 0s ease 0.3s;
+        }
+
+        &:after {
+            left: 0;
+            width: 1px;
+            content: "";
+            height: 100%;
+            bottom: -10px;
+            display: block;
+            padding-top: 20px;
+            background: $color;
+            position: absolute;
+            transition: height 0.3s ease 0.3s,width 0.3s ease,padding 0s ease 0.3s,left 0s ease 0.3s,bottom 0s ease 0.3s,background 0s ease 0.3s;
+        }
+    }
+}
+
+@mixin btn-style-2($width, $padd, $font-size, $btn, $color, $colorHov, $color2) {
+    @if $btn {
+        border: 1px solid #fff;
+        border-radius: 1px;
+    }
+    @else {
+        //  border: 1px solid transparent;
+        border-radius: 1px;
+    }
+
+    width: $width;
+    outline: none;
+    display: block;
+    padding: $padd;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    background-color: $color;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-radius;
+    transition-timing-function: ease-in-out;
+
+    &:before {
+        opacity: 0;
+        position: absolute;
+        content: attr(data-text);
+        transform: translate3d(50%, 0, 0);
+    }
+
+    .btn-overlay {
+        top: 0;
+        right: 0;
+        opacity: 0;
+        width: 140%;
+        height: 101%;
+        display: block;
+        position: absolute;
+        border-radius: 1px;
+        background-color: $colorHov;
+        transform: translate3d(100%, 0, 0) skew(0deg);
+        transition: transform .5s ease,opacity .3s ease;
+    }
+
+    .btn-content,
+    &:before {
+        font-size: $font-size;
+        font-weight: 500;
+        letter-spacing: .7px;
+    }
+
+    .btn-content,
+    &:before {
+        z-index: 1;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity .25s ease,transform .25s ease;
+    }
+
+    &:hover {
+        background-color: $color;
+
+        //border: 1px solid $colorHov;
+        border-radius: 1px;
+
+        &:before {
+            opacity: 1;
+            color: $color2;
+            transform: translateZ(0);
+        }
+
+        .btn-overlay {
+            opacity: 1;
+            transform: translate3d(10%, 0, 0) skew(-20deg);
+        }
+
+        .btn-content {
+            opacity: 0;
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
+}

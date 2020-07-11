@@ -1,0 +1,68 @@
+<!------------------- Dashboard ----------------------->
+<div class="dashboard">
+
+    <!------------------- Items ----------------------->
+    <div class="wrapper-items card p-2">
+
+        <div class="header-items-wrapper">
+            <div class="header-section text-uppercase">
+                <h3 class="title">Todas las entradas</h3>
+            </div>
+        </div>
+
+        <!-------****************************--------->
+        <div class="item" *ngFor="let post of posts | async | paginate: { itemsPerPage: 10, currentPage: pageActual }">
+
+
+            <!-------****************************--------->
+            <a class="content-item link-item" routerLink="/escritorio/entrada/ver/{{ post.id }}">
+                <div class="post-icon">
+                    <div class="img-post">
+                        <img class="post-picture" src="../../../assets/img/backgrounds/profile.jpg"
+                            alt="Profile picture">
+                    </div>
+                    <div class="empty-icon" [inlineSVG]="'assets/img/graphics/profile.svg'"></div>
+                </div>
+                <div class="post-title">
+                    <span class="title">{{ post.title }}</span>
+                </div>
+            </a>
+
+            <!-------****************************--------->
+            <div class="content-item excerpt">
+                {{ post.excerpt }}
+            </div>
+
+            <!-------****************************--------->
+            <div class="content-item date">
+                {{ post.published }}
+            </div>
+
+            <!-------****************************--------->
+
+            <a class="responsive-link" routerLink="/escritorio/entrada/ver/{{ post.id }}"></a>
+
+            <!-------****************************--------->
+            <div class="content-item options-item">
+                <a class="options-post" routerLink="/escritorio/entrada/ver/{{ post.id }}">
+                    <div class="menu-icon show" [inlineSVG]="'assets/img/graphics/view_simple.svg'"></div>
+                </a>
+                <a class="options-post" routerLink="/escritorio/entrada/editar/{{ post.id }}">
+                    <div class="menu-icon edit" [inlineSVG]="'assets/img/graphics/edit.svg'"></div>
+                </a>
+                <button class="options-post" (click)="setDelete(post.id)">
+                    <div class="menu-icon delete" [inlineSVG]="'assets/img/graphics/delete.svg'"></div>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="footer-items-wrapper">
+            <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+        </div>
+
+    </div>
+    <!---------------***** Items *****----------------->
+
+</div>
+<!---------------***** Dashboard *****----------------->

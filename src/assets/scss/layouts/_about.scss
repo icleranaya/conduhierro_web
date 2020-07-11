@@ -1,0 +1,398 @@
+.about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 10% 16.5rem;
+    justify-content: center;
+    background: $grey-light;
+
+    @include mediaXL {
+        padding: 10% 12.5rem;
+    }
+
+
+    @include mediaLg {
+        padding: 10% 10.5rem;
+    }
+
+
+    @include mediaMd {
+        padding: 7.5rem 5% 0 5%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+
+    .content-about {
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        position: relative;
+
+        .title {
+            width: 30%;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+
+            @include mediaMd {
+                width: 90%;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                margin-left: 1.7rem;
+            }
+
+
+            .title-txt {
+                line-height: 5.5rem;
+                color: $second-color;
+
+                @include mediaXL {
+                    line-height: 4.75rem;
+                }
+
+
+                @include mediaXSm {
+                    line-height: 3.85rem;
+                }
+            }
+        }
+
+        .img-section {
+            z-index: -1;
+            top: 0;
+            right: 0;
+            width: 50%;
+            position: absolute;
+
+            @include mediaMd {
+                position: relative;
+                width: 100%;
+            }
+
+
+            .img-link {
+                width: 100%;
+            }
+        }
+
+        .button-white {
+            top: 35%;
+            right: 0;
+            margin: auto;
+            width: 92px;
+            height: 92px;
+            padding: .5rem;
+            position: absolute;
+            background: white;
+
+            @include mediaXL {
+                top: 40%;
+                width: 80px;
+                height: 80px;
+            }
+
+            @include mediaLg {
+                width: 72px;
+                height: 72px;
+            }
+
+            @include mediaXSm {
+                width: 3.25rem;
+                height: 3.25rem;
+            }
+
+            .arrow-link {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                padding: 1.25rem;
+                align-items: center;
+                justify-content: center;
+                transform: rotate(180deg);
+                transition: 0.5s transform cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                @include mediaXL {
+                    padding: .95rem
+                }
+
+                @include mediaLg {
+                    padding: .75rem;
+                }
+                @include mediaXSm {
+                    padding: .375rem;
+                }
+
+
+                svg {
+                    width: 100%;
+
+                    path {
+                        fill: $second-color;
+                        transition: .3s fill;
+                    }
+                }
+            }
+
+            .arrow-link {
+                &:hover {
+                    transform: rotate(180deg) translateX(-5px);
+
+                    svg {
+                        path {
+                            fill: $default-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .info-container {
+            z-index: 2;
+            padding: 56px;
+            max-width: 55%;
+            min-height: 38vh;
+            margin-left: 10rem;
+            background: white;
+
+            @include mediaXL {
+                padding: 2rem;
+                min-height: 35vh;
+            }
+
+
+            @include mediaLg {
+                min-height: 41vh;
+            }
+
+
+            @include mediaMd {
+                margin-left: 0;
+                max-width: 100%;
+                margin-top: -7px;
+            }
+
+
+            .info-title, .info-content {
+                line-height: 2.5rem;
+
+                @include mediaXL {
+                    line-height: 2rem;
+                }
+
+
+                @include mediaMd {
+                    text-align: center;
+                    line-height: 3rem;
+                }
+
+
+                @include mediaXSm {
+                    line-height: 2.35rem;
+                }
+            }
+
+            .info-title {
+                font-size: 26px;
+                font-weight: 500;
+                margin-bottom: 1rem;
+                color: $third-color;
+
+                @include mediaXL {
+                    font-size: 24px;
+                    margin-bottom: .8rem;
+                }
+
+
+                @include mediaMd {
+                    font-size: 28px;
+                    margin-bottom: 1rem;
+                }
+
+
+                @include mediaXSm {
+                    font-size: 20px;
+                    margin-bottom: .5rem;
+                }
+            }
+
+            .info-content {
+                font-size: 16px;
+
+                @include mediaXL {
+                    font-size: 14px;
+                }
+
+
+                @include mediaMd {
+                    font-size: 18px;
+                }
+
+
+                @include mediaXSm {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .text-decor {
+        opacity: .4;
+        color: #e0e0e0;
+        margin-left: -7rem;
+        text-align: center;
+        position: absolute;
+    }
+
+    &.we-are {
+        .decoration-content {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            .content-hexagono {
+                right: 200px;
+                bottom: -120px;
+                position: absolute;
+
+                @include mediaMd {
+                    display: none;
+                }
+
+
+                svg {
+                    height: auto;
+                    width: 180px;
+
+                    @include mediaXL {
+                        width: 160px;
+                    }
+                }
+            }
+
+            .content-figure-1 {
+                top: -70px;
+                right: 35%;
+                position: absolute;
+
+                svg {
+                    height: auto;
+                    width: 120px;
+                }
+
+                @include mediaXL {
+                    top: -50px;
+
+                    svg {
+                        width: 100px;
+                    }
+                }
+
+
+                @include mediaXSm {
+                    display: none;
+                }
+            }
+        }
+
+        .text-decor {
+            top: 120px;
+            left: 120px;
+            font-size: 16rem;
+            line-height: 18rem;
+            letter-spacing: 1.8rem;
+
+            @include mediaXSm {
+                top: -11rem;
+                left: 1rem;
+                font-size: 12rem;
+                line-height: 20rem;
+                letter-spacing: 1.8rem;
+            }
+        }
+    }
+
+    &.we-do {
+        .decoration-content {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            .content-hexagono {
+                right: 35%;
+                bottom: -130px;
+                position: absolute;
+
+                @include mediaSm {
+                    display: none;
+                }
+
+                svg {
+                    height: auto;
+                    width: 170px;
+                }
+            }
+
+            .content-figure-1 {
+                left: 0;
+                bottom: -8%;
+                position: absolute;
+
+                @include mediaMd {
+                    display: none;
+                }
+
+
+                svg {
+                    height: auto;
+                    width: 100px;
+                }
+            }
+        }
+
+        .text-decor {
+            left: 3rem;
+            top: -7rem;
+            font-size: 9rem;
+            line-height: 15rem;
+            letter-spacing: 1rem;
+        }
+
+        .content-about {
+            .button-white {
+                top: 30%;
+
+                @include mediaXL {
+                    top: 25%;
+                }
+
+                @include mediaLg {
+                    top: 30%;
+                }
+
+                @include mediaMd {
+                    top: 20rem;
+                }
+
+                @include mediaSm {
+                   top: 25rem;
+                }
+               
+
+                @include mediaXSm {
+                    top: 15rem;
+                }
+
+                @include media-iphone-4 {
+                    top: 14rem;
+                }
+            }
+        }
+    }
+}

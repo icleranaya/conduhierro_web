@@ -1,0 +1,351 @@
+.din {
+    font-family: 'DINPro', sans-serif;
+}
+
+.din-xl {
+    font-size: 5.625rem;
+
+    @include mediaXL {
+        font-size: 5rem;
+    }
+
+
+    @include mediaLg {
+        font-size: 4.35rem;
+    }
+
+
+    @include mediaXSm {
+        font-size: 3.44rem;
+        line-height: 1.15;
+    }
+
+
+    @include mediaXXSm {
+        font-size: 3rem;
+        line-height: 1.25;
+    }
+
+
+    @include media-iphone-4 {
+        font-size: 2.5rem;
+    }
+}
+
+.din-lg {
+    font-size: 4.375rem;
+
+    @include mediaXXL {
+        font-size: 4.75rem;
+    }
+
+
+    @include mediaXL {
+        font-size: 3.75rem;
+    }
+
+
+    @include mediaLg {
+        font-size: 3.5rem;
+    }
+
+
+    @include mediaMd {
+        font-size: 3.2rem;
+    }
+
+
+    @include mediaXXSm {
+        font-size: 2rem;
+    }
+}
+
+.din-md {
+    font-size: 3.75rem;
+    line-height: 1;
+
+    @include mediaXXL {
+        font-size: 4.5rem;
+    }
+
+
+    @include mediaLg {
+        font-size: 3.3rem;
+    }
+
+
+    @include mediaMd {
+        font-size: 3.2rem;
+    }
+
+
+    @include mediaXXSm {
+        font-size: 2rem;
+    }
+}
+
+.din-sm {
+    font-size: 3rem;
+}
+
+.din-xsm {
+    font-size: 2.5rem;
+
+    @include mediaLg {
+        font-size: 2.25rem;
+    }
+
+    @include mediaXXSm {
+        font-size: 2rem;
+    }
+}
+
+.din-btn {
+    font-size: 1.75rem;
+}
+
+.din-height {
+    line-height: 89px !important;
+}
+
+.din-spacing {
+    letter-spacing: 35px;
+}
+
+.din-spacing-sm {
+    letter-spacing: 25px;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.font-weight-light {
+    font-weight: 300;
+}
+
+.font-weight-regular {
+    font-weight: 400;
+}
+
+.font-weight-medium {
+    font-weight: 500;
+}
+
+.font-weight-bold {
+    font-weight: 600;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.txt-XLg {
+    font-size: 30px;
+
+    @include mediaXXL {
+        font-size: 22px;
+    }
+
+
+    @include mediaXL {
+        font-size: 22px;
+    }
+
+
+    @include mediaMd {
+        font-size: 22px;
+    }
+
+
+    @include mediaSm {
+        font-size: 22px;
+    }
+
+
+    @include mediaXSm {
+        font-size: 22px;
+    }
+
+
+    @include mediaXXSm {
+        font-size: 22px;
+    }
+}
+
+.txt-Lg {
+    font-size: 26px;
+    font-weight: 2rem;
+
+    @include mediaXL {
+        font-size: 24px;
+    }
+
+
+    @include mediaLg {
+        font-size: 22px;
+    }
+
+
+    @include mediaMd {
+        font-size: 20px;
+    }
+
+
+    @include mediaSm {
+        font-size: 18px;
+    }
+
+
+    @include mediaXSm {
+        font-size: 16px;
+    }
+
+
+    @include mediaXXSm {
+        font-size: 14px;
+    }
+}
+
+//Default text size
+.txt-Md {
+    font-size: 22px;
+    line-height: 1.85rem;
+
+    @include mediaXXL {
+        font-size: 22px;
+    }
+
+
+    @include mediaXL {
+        font-size: 20px;
+    }
+
+
+    @include mediaLg {
+        font-size: 18px;
+    }
+
+
+    @include mediaSm {
+        font-size: 16px;
+    }
+
+
+    @include mediaXSm {
+        font-size: 14px;
+    }
+
+
+    @include mediaXXSm {
+        font-size: 14px;
+    }
+}
+
+.txt-Sm {
+    font-size: 18px;
+
+    @include mediaXXL {
+        font-size: 22px;
+    }
+
+
+    @include mediaXL {
+        font-size: 16px;
+    }
+
+
+    @include mediaMd {
+        font-size: 16px;
+    }
+
+
+    @include mediaSm {
+        font-size: 15px;
+    }
+
+
+    @include mediaXSm {
+        font-size: 14px;
+    }
+
+
+    @include mediaXXSm {
+        font-size: 13px;
+    }
+}
+
+.txt-XSm {
+    font-size: 14px;
+
+    @include mediaXXL {
+        font-size: 22px;
+    }
+
+
+    @include mediaXL {
+        font-size: 14px;
+    }
+
+
+    @include mediaLg {
+        font-size: 13px;
+    }
+
+
+    @include mediaMd {
+        font-size: 13px;
+    }
+
+
+    @include mediaSm {
+        font-size: 12px;
+    }
+
+
+    @include mediaXSm {
+        font-size: 12px;
+    }
+
+
+    @include mediaXXSm {
+        font-size: 12px;
+    }
+}
+
+.txt-XXSm {
+    font-size: 12px;
+    line-height: 1.8rem;
+    letter-spacing: .5px;
+
+    @include mediaXL {
+        line-height: 1.2rem;
+    }
+
+
+    @include mediaLg {
+        font-size: 11px;
+    }
+
+
+    @include mediaSm {
+        font-size: 10px;
+    }
+
+
+    @include mediaXXSm {
+        font-size: 9px;
+    }
+}

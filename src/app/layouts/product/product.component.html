@@ -1,0 +1,252 @@
+<!--------- Producto ---------->
+<div class="product">
+
+    <!--------- Wrapper ---------->
+    <div class="product-wrapper">
+
+        <!--------- Wrapper-Elements ---------->
+        <div class="wrapper-elements">
+
+
+            <!--------- Content-Contaier ---------->
+            <div class="content-container">
+
+                <a class="back-link" routerLink="/portafolio">
+                    <div class="content-figure" [inlineSVG]="'assets/img/graphics/about_arrow.svg'">
+                    </div>
+                    <p class="txt-XSm">Volver a productos</p>
+                </a>
+
+                <!--------- Content-1 ---------->
+                <div class="content-1">
+
+                    <!--------- Content-Row ---------->
+                    <div class="content-row">
+
+                        <div class="title-product">
+                           
+                            <h2 class="title din din-lg text-uppercase">{{ title }}</h2>
+                            <p class="sub-title txt-Md">{{ excerpt }}</p>
+                        </div>
+
+                        <div class="product-gallery">
+                            
+                            <div class="swiper-wrapper-container">
+
+                                <div class="swiper-pagination"></div>
+                                <!------------------- Slider ----------------------->
+
+                                <div class="swiper-container">
+                    
+                                    <div class="swiper-wrapper"></div>
+                                    
+                                </div>
+
+                                <!---------------***** Slider *****----------------->
+
+                            </div>
+
+                            <!--------- Create Items Slider ---------->
+                            <div class="items-gallery-slider">
+    
+                                <div id="gallery-{{ i }}" class="swiper-slide" *ngFor="let slide of slider; let i = index">
+                                
+                                    <div class="wrapper-img">
+                                        <img [src]="slide" alt="{{ title }}" class="thumbnail">
+                                    </div>
+                                
+                                </div>
+
+                                <!-------****************************--------->
+                                <div id="gallery-4" class="swiper-slide">
+                                
+                                    <div class="wrapper-img">
+                                        <img [src]="thumbnail" alt="{{ title }}" class="thumbnail">
+                                    </div>
+                                
+                                </div>
+                            </div>
+
+                            
+
+                            <ul class="next-img">
+                                <li class="img-thumb" *ngFor="let slide of slider; let i = index">
+                                    <img [src]="slide" alt="{{ title }}" class="thumbnail" (click)="onSlideTo( i + 1 )">
+                                </li>
+                                <li class="img-thumb">
+                                    <img [src]="thumbnail" alt="{{ title }}" class="thumbnail" (click)="onSlideTo(5)">
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="product-description">
+
+                            <div class="title-product">
+                                <h2 class="title din din-lg text-uppercase">{{ title }}</h2>
+                                <p class="sub-title txt-Md">{{ excerpt }}</p>
+                            </div>
+                            
+                            <div class="description txt-Sm" [innerHTML]="content"></div>
+
+                            <div class="aviable-btn">
+                                <p class="txt-XSm">Consulte la disponibilidad <br> de este producto</p>
+                                <div class="btn-container btn">
+                                    <div class="btn-full txt-XSm" data-text="CONSULTE DISPONIBILIDAD" (click)="onOpenModal()">
+
+                                        <span class="btn-overlay" data-reactid="111"></span>
+                                        <span class="btn-content text-uppercase">
+                                            Consulte Disponibilidad
+                                            <div class="content-figure"
+                                                [inlineSVG]="'assets/img/graphics/about_arrow.svg'">
+                                            </div>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--------- Content-Row ---------->
+
+                </div>
+                <!---------***** Content-1 *****---------->
+
+                <!--------- Content-2 ---------->
+                <div class="content-2">
+
+                    <a *ngIf="existsNextPost" class="next-product" routerLink="/portafolio/ver/{{ nextPostId }}">
+                        <div class="img-miniature">
+                            <img [src]="nextPostThumbnail" alt="{{ nextPostTitle }}"
+                                class="thumbnail">
+
+                        </div>
+                        <div class="next-link">
+                            <p class="txt-XXSm">Siguiente Producto</p>
+                            <div class="content-figure" [inlineSVG]="'assets/img/graphics/about_arrow.svg'">
+                            </div>
+                        </div>
+                        <div class="product-id">
+                            <h3 class="din din-xsm text-uppercase">{{ nextPostTitle }}</h3>
+                        </div>
+                    </a>
+
+                </div>
+                <!---------**** Content-2 ****---------->
+
+            </div>
+            <!---------***** Content-Contaier *****---------->
+
+        </div>
+        <!---------**** Wrapper-Elements ****---------->
+
+    </div>
+    <!---------**** Wrapper ****---------->
+
+    <!--------- Wrapper ---------->
+    <div class="Modal" [class.open]="open">
+
+        <div class="contact"
+            style="background: url('assets/img/backgrounds/conduhierro_contacto_bg.png'); background-size: cover; background-position: center center;">
+
+            <div class="decoration-content">
+                <!------------------- Btn Modal ----------------------->
+                <div class="btn-modal-menu" [class.active]="active" (click)="onCloseModal()">
+                    <div class="btn-modal-container">
+                        <div class="btn-modal-inner"></div>
+                    </div>
+                </div>
+                <!---------------***** Btn Modal *****----------------->
+
+                <div class="content-hexagono" [inlineSVG]="'assets/img/graphics/hexagono_1.svg'"></div>
+                <div class="content-figure-1" [inlineSVG]="'assets/img/graphics/linea_trama_1.svg'"></div>
+                <div class="content-figure-2" [inlineSVG]="'assets/img/graphics/linea_trama_4.svg'"></div>
+                <div class="content-figure-3" [inlineSVG]="'assets/img/graphics/linea_trama_1.svg'"></div>
+
+            </div>
+
+            <!------------------- Content ----------------------->
+            <div class="content-contact">
+
+                <!------------- Wrapper  -------------->
+                <div class="content-wrapper">
+
+                    <!----------- Text-Content ----------->
+                    <div class="text-content text-center">
+
+                        <div class="head-contact">
+
+                            <h1 class="contact-title din din-md text-uppercase">contáctanos</h1>
+                            <p class="generic-txt">Haz tu pedido a través de los siguientes números</p>
+
+                        </div>
+
+                        <!------------ Contact-Buttons ----------->
+                        <div class="contact-buttons">
+
+                            <div class="contact-link txt-Sm">
+
+                                <fa-icon class="phone-icon" [icon]="faPhone"></fa-icon>
+                                <span class="txt-Sm font-weight-medium">0241-416.06.45</span>
+
+                            </div>
+
+                            <div class="btn whatsapp-btn-container">
+
+                                <a class="whatsapp-btn txt-Sm" data-text="Escríbenos" href="https://wa.me/584144362573"
+                                    target="_blank">
+
+                                    <span class="btn-overlay" data-reactid="111"></span>
+                                    <span class="btn-content">
+                                        <fa-icon class="whatsapp-icon instagram-icon" [icon]="faWhatsapp"></fa-icon>
+                                        0414-854.65.25
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                            <span class="h-line"></span>
+
+                        </div>
+                        <!------------***** Contact-Buttons *****----------->
+
+                        <!--------- Email-and-Info ------------>
+                        <div class="contact-email">
+                            <p class="generic-txt">o scribenos al correo:</p>
+                            <a class="email txt-Lg font-weight-bold" href="#">conduhierro@gmail.com</a>
+                        </div>
+
+                        <p class="info txt-XXSm font-weight-bold">
+                            Nuestros horarios de atención al público
+                            son de 8:00am a 12:00 pm y de
+                            1:00
+                            pm a
+                            5:00 pm
+                        </p>
+                        <!---------***** Email-and-Info *****----------->
+
+                        <a class="instagram-btn" href="#">
+
+                            <fa-icon class="instagram-icon" [icon]="faInstagram"></fa-icon>
+                            <p class="instagram-link txt-XSm text-uppercase">conduhierro</p>
+
+                        </a>
+
+                    </div>
+                    <!----------- Text-Content ----------->
+
+                </div>
+                <!-------------**** Wrapper ****-------------->
+
+
+
+            </div>
+            <!---------------***** Content *****----------------->
+        </div>
+
+    </div>
+    <!---------**** Wrapper ****---------->
+
+</div>
+<!---------**** Producto ****---------->

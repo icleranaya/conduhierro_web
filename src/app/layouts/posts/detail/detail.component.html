@@ -1,0 +1,14 @@
+<!------------------- Navbar ----------------------->
+<app-navbar></app-navbar>
+<!---------------***** Navabr *****----------------->
+
+<!------------------- Dashboard ----------------------->
+<main class="dashboard">
+
+    <div *ngIf="post">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content }}</p>
+        <!-- <p>{{ post.published | date: 'fullDate'}}</p> -->
+    </div>
+</main>
+<!---------------***** Dashboard *****----------------->

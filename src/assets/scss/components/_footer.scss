@@ -1,0 +1,28 @@
+.footer {
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $default-color;
+    padding: $spacer-1 ($default-width - 85);
+    font-family: 'Montserrat-Medium', sans-serif;
+
+    .copyright,
+    .social {
+        color: $white-default;
+        font-size: $spacer-1 - 0.1;
+    }
+
+    .social {
+        a {
+            color: $white-default;
+
+            > span {
+                margin-left: $spacer-1 - 0.5;
+            }
+        }
+    }
+}

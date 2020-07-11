@@ -1,0 +1,163 @@
+// ======================================
+//              Buttons Mixins
+// ======================================
+@mixin btn-admin($color, $colorHov) {
+    width: auto;
+    outline: none;
+    display: flex;
+    padding: 14px;
+    height: 48px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: $color;
+    border-radius: $border-radius_2;
+    transition-duration: .15s;
+    transition-property: width, min-width;
+    transition-timing-function: ease;
+
+    @include mediaXL {
+        padding: 12px;
+        height: 44px;
+    }
+
+
+    @include mediaSm {
+        padding: 10px;
+        height: 40px;
+    }
+
+
+    .menu-icon {
+        width: 20px;
+        height: 20px;
+        flex: none;
+        margin-right: 6px;
+        transition-duration: .15s;
+        transition-property: width, margin-right;
+        transition-timing-function: ease;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .btn-content {
+        opacity: 1;
+        width: 65px;
+        overflow: hidden;
+        font: 500 15px 'Roboto';
+        line-height: 1;
+
+        // transition-duration: .15s;
+        // transition-property: width, opacity, transform;
+        // transition-timing-function: ease;
+        transition: .15s opacity ease, .15s width ease;
+
+        @include mediaXL {
+            font-size: 14px;
+        }
+    }
+
+    //@include btn-type;
+
+    &:after {
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 70%;
+        right: 0;
+        left: 0;
+        border-radius: 25px;
+        z-index: -1;
+        margin: 0 auto;
+        box-shadow: 0px 24px 36px -12px rgba($color, 0.5);
+    }
+}
+
+@mixin btn-type {
+    .btn-save, &.btn-save {
+        .btn-content {
+            width: 60px;
+        }
+    }
+
+    .btn-edit, &.btn-edit {
+        .btn-content {
+            width: 50px;
+        }
+    }
+
+    .btn-delete, &.btn-delete {
+        .btn-content {
+            width: 50px;
+        }
+    }
+
+    .btn-update, &.btn-update {
+        .btn-content {
+            width: 70px;
+        }
+    }
+
+    .btn-sumbit, &.btn-sumbit {
+        .btn-content {
+            width: 65px;
+        }
+    }
+}
+
+@mixin btn-outline-admin($width, $padd, $font-size, $color, $colorHov) {
+    width: $width;
+    outline: none;
+    height: $padd;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    font: 400 13px 'Roboto';
+    justify-content: center;
+    border: 2px solid $color;
+    transition-duration: 0.3s;
+    background-color: #ffffff;
+    border-radius: $border-radius_2;
+    transition-property: background-color, border-radius;
+    transition-timing-function: ease-in-out;
+}
+
+@mixin btn-close {
+    &.close {
+        .menu-icon {
+            margin-right: 0;
+            transition-duration: .25s;
+            transition-property: margin-right;
+            transition-timing-function: ease-out;
+        }
+
+        .btn-content {
+            width: 0;
+            opacity: 0;
+
+            // transition-duration: .2s;
+            // transition-property: width, opacity;
+            // transition-timing-function: ease;
+            transition: .2s opacity ease, .2s width ease;
+        }
+
+        &:hover, &:active, &:focus {
+            .menu-icon {
+                margin-right: 6px;
+            }
+
+            .btn-content {
+                width: 65px;
+                opacity: 1;
+            }
+
+            @include btn-type;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+<app-topbar></app-topbar>
+
+<!------------------- Header ----------------------->
+<header *ngIf="isPanelAdmin" class="wrapper-sidebar" [class.create]="activeCreate">
+
+    <!-------****************************--------->
+    <div class="header-sidebar">
+        <a class="link-logo" href="https://prismaagencia.com" target="_blank">
+            <span>NewOne</span>
+        </a>    
+    </div>
+
+    <!-------****************************--------->
+    <div class="wrapper-navbar">
+
+        <!------------------- Menu ----------------------->
+        <nav class="adm-navbar">
+
+            <!-------****************************--------->
+            <ul class="adm-nav">
+
+                <!-------****************************--------->
+                <li class="nav-item">
+                    <a class="link-item" routerLink="/escritorio" [class.active]="activeDashboard">
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/layout.svg'"></div>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+
+                <!-- Posts Link-->
+                <li class="nav-item">
+                    <a class="link-item" routerLink="/escritorio/entrada/crear" [class.active]="activeCreate">
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/file-plus.svg'"></div>
+                        <span>Crear Entrada</span>
+                    </a>
+                </li>
+                <!-- /End Posts Link -->
+
+            </ul>
+        
+        </nav>
+        <!---------------***** Menu *****----------------->
+
+        <!------------------- Version ----------------------->
+        <div class="version">
+            <span>Versión 1.0.0-beta</span>
+            <span>&copy; 2019 - &nbsp;<a href="https://prismaagencia.com/" target="_blank">prismaagencia.com</a></span>
+        </div>
+        <!---------------***** Version *****----------------->
+
+    </div>
+
+</header>
+<!---------------***** Header *****----------------->

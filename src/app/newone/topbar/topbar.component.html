@@ -1,0 +1,71 @@
+<div *ngIf="isPanelAdmin" class="topbar" [class.create]="activeCreate" [class.view]="activeView" [class.edit]="activeEdit" [class.dash-board]="activeDashboard">
+
+    <a class="back-link" routerLink="/escritorio" [class.active]="activeDashboard">
+        <div class="icon-container" [inlineSVG]="'assets/img/graphics/arrow-left.svg'"></div>
+        <p>Atrás</p>
+    </a>
+
+    <div class="sidebar-menu"  (click)="status=!status"  
+    [ngClass]="status ? 'open' : 'closed'">
+        <div class="icon-container">
+            <div class="icon-burger line-top"></div>
+            <div class="icon-burger line-center"></div>
+            <div class="icon-burger line-botttom"></div>
+        </div>
+    </div>
+
+  <div class="user-menu">
+
+    <div class="user-menu-header" [class.active]="active" (click)="onBurgerClicked()">
+
+        <div class="user-name">
+            <span>Hola, Admin</span>
+        </div>
+        <div class="user-picture">
+            <div class="img-profile">
+                <img class="profile-picture" src="../../../assets/img/backgrounds/profile.jpg" alt="Profile picture">
+            </div>
+            <div class="user-icon" [inlineSVG]="'assets/img/graphics/profile.svg'"></div>
+        </div>
+
+    </div>
+
+    <!-------------- User Card ---------------->
+    <ul class="user-options" [class.open]="open">
+
+        <!--**********************************************************-->
+
+        <li class="options-item options-profile">
+
+           <div class="user-picture">
+
+            <span class="edit-tag">cambiar</span>
+            <img class="profile-picture" src="../../../assets/img/backgrounds/profile.jpg" alt="Profile picture">
+            <div class="options-user-icon" [inlineSVG]="'assets/img/graphics/profile.svg'"></div>
+
+           </div>
+
+            <div class="options-user-name">
+                <span class="name">Charles Dawson</span>
+                <span class="email">developer.prisma@gmail.com</span>
+                <!-- <span class="email">{{ userEmail }}</span> -->
+            </div>
+        </li>
+
+        <!--**********************************************************-->
+
+        <li *ngIf="auth.isLoggedIn" class="options-item newone-btn">
+
+            <a class="options-link btn-warning"  (click)="auth.logout()">
+                <div class="options-icon" [inlineSVG]="'assets/img/graphics/shut-down.svg'"></div>
+                <span class="btn-content">Cerrar sesión</span>
+                
+            </a>
+        </li>
+
+    </ul>
+    <!-----------***** User Card *****------------->
+
+  </div>
+
+</div>

@@ -1,0 +1,97 @@
+.dashboard {
+    right: 0;
+    z-index: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-flow: column;
+    position: absolute;
+    width: calc(100% - 220px);
+    justify-content: space-around;
+
+    .wrapper-items {
+        display: flex;
+        margin-left: $spacer-5;
+        margin-right: $spacer-5;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+
+        .header-section {
+            display: flex;
+            flex-flow: row nowrap;
+            width: $default-width;
+            margin-bottom: $spacer-4;
+            justify-content: flex-start;
+
+            .menu-icon {
+                width: 15px;
+                margin-right: 15px;
+                svg {
+                    width: 20px;
+                    
+                    #Dribbble-Dark-Preview {
+                        fill: $grey_1;
+                    }
+                }
+            }
+        }
+
+        .item {
+            display: flex;
+            padding: $spacer-1;
+            width: $default-width;
+            justify-content: space-between;
+            border-top: 1px solid rgba($black-default,.12);
+
+            >.content-item {
+                flex: 1 1 ($default-width / 3);
+            }
+
+            >a {
+                &.link-item {
+                    color: $default-dark;
+
+                    &:hover {
+                        color: $grey_1;
+                    }
+                }
+            }
+
+            >.excerpt {
+                flex: 1 1 ( ($default-width / 2) + 15);
+                margin: 0 $spacer-1;
+            }
+
+            >.options-item {
+                display: flex;
+                justify-content: flex-end;
+
+                a {
+                    margin-right: $spacer-1;
+
+                    .menu-icon {
+                        width: 15px;
+                        margin-right: 15px;
+                        
+                        svg {
+                            width: 20px;
+                            
+                            #Dribbble-Dark-Preview {
+                                fill: $grey_1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .card {
+        border-radius:1px;
+        padding: $spacer-1;
+        background: $white-default;
+        color: rgba($black-default,.87);
+        box-shadow: 0 2px 1px -1px rgba($black-default,.2), 0 1px 1px 0 rgba($black-default,.14), 0 1px 3px 0 rgba($black-default,.12);
+    }
+}

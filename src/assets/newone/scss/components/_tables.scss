@@ -1,0 +1,34 @@
+th {
+	// Matches default `<td>` alignment by inheriting from the `<body>`, or the
+	// closest parent with a set `text-align`.
+	text-align: inherit;
+}
+
+
+table {
+	width: $default-width;
+	margin-bottom: $spacer-1;
+	border-collapse: collapse;
+	background: $white-default; // Reset for nesting within parents with `background-color`.
+
+	thead {
+
+
+		th {
+			vertical-align: bottom;
+		}
+	}
+
+  td {
+    vertical-align: top;
+  }
+
+//   thead th {
+//     vertical-align: bottom;
+//     border-bottom: (2 * $table-border-width) solid $table-border-color;
+//   }
+
+//   tbody + tbody {
+//     border-top: (2 * $table-border-width) solid $table-border-color;
+//   }
+}

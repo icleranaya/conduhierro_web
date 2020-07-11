@@ -1,0 +1,103 @@
+<!------------------- Navbar ----------------------->
+<div *ngIf="isFrontPage" class="nav" [class.white]="white">
+
+    <!------------------- Header Navbar ----------------------->
+    <div class="header-navbar">
+
+        <!------------------- Logo ----------------------->
+        <div class="logo-wrapper">
+            <a class="logo-content" routerLink="/">
+                <div class="logo" [inlineSVG]="'assets/img/logo/logo.svg'"></div>
+            </a>
+        </div>
+        <!---------------***** Logo *****----------------->
+
+        <!------------------- Hamburger Menu ----------------------->
+        <div class="burger-menu" [class.active]="active" [class.product]="product" (click)="onBurgerClicked()">
+            <div class="burger-container">
+                <div class="burger-inner"></div>
+            </div>
+        </div>
+        <!---------------***** Hamburger Menu *****----------------->
+    </div>
+    <!---------------***** Header Navbar *****----------------->
+
+    <!------------------- Content Menu ----------------------->
+    <nav class="navbar" [class.open]="open" (click)="onHiddenMenu()">
+
+        <!------------------- Slogan ----------------------->
+        <div class="slogan-wrapper">
+            <div class="slogan-content">
+                <div class="content-figure" [inlineSVG]="'assets/img/graphics/hexagono_outline.svg'"></div>
+                <h2 class="slogan font-weight-lighter">Tu solución en materiales para construcción</h2>
+            </div>
+            <div class="slogan-decoration">
+                <div class="decoration-left">
+                    <div class="content-figure-1" [inlineSVG]="'assets/img/graphics/linea_trama_1.svg'"></div>
+                    <div class="content-figure-2" [inlineSVG]="'assets/img/graphics/linea_trama_1.svg'"></div>
+                    <div class="content-figure-3" [inlineSVG]="'assets/img/graphics/linea_trama_1.svg'"></div>
+                </div>
+                <div class="decoration-right"></div>
+            </div>
+        </div>
+        <!---------------***** Slogan *****----------------->
+
+        <!------------------- Item Menu ----------------------->
+        <ul class="navbar-nav">
+
+            <!------------------- Logo Menu ----------------------->
+            <li class="nav-logo">
+                <a class="logo-link" routerLink="/">
+                    <div class="logo" [inlineSVG]="'assets/img/logo/logo.svg'"></div>
+                </a>
+            </li>
+            <!---------------***** Logo Menu *****----------------->
+
+            <!-------****************************--------->
+            <li class="nav-item din din-xsm text-center">
+                <a class="nav-link" routerLink="/servicios">Servicios</a>
+            </li>
+
+            <!-------****************************--------->
+            <li class="nav-item din din-xsm text-center">
+                <a class="nav-link" routerLink="/nosotros">Quiénes somos</a>
+            </li>
+
+            <!-------****************************--------->
+            <li class="nav-item din din-xsm text-center">
+                <a class="nav-link" routerLink="/portafolio">Nuestros Productos</a>
+            </li>
+
+            <!-------****************************--------->
+            <li class="nav-item din din-xsm text-center">
+                <a class="nav-link" routerLink="/contacto">Contáctanos</a>
+            </li>
+
+            <!-------****************************--------->
+            <li class="nav-item din din-xsm text-center txt-Sm">
+                <a class="nav-link" routerLink="/cdh-admin">Iniciar Sesión</a>
+            </li>
+        </ul>
+        <!---------------***** Item Menu *****----------------->
+
+        <!------------------- Decoration Menu ----------------------->
+        <div class="decoration-menu">
+            <h1 class="text-uppercase din vertical-title">Somos Conduhierro</h1>
+            <div class="content-figure" [inlineSVG]="'assets/img/graphics/hexagono_2.svg'"></div>
+        </div>
+        <!---------------***** Decoration Menu *****----------------->
+
+        <!------------------- Instagram ----------------------->
+        <a class="instagram-btn" href="#">
+
+            <fa-icon class="instagram-icon" [icon]="faInstagram"></fa-icon>
+            <p class="instagram-link txt-Sm text-uppercase">conduhierro</p>
+
+        </a>
+        <!---------------***** Instagram *****----------------->
+
+    </nav>
+    <!---------------***** Content Menu *****----------------->
+
+</div>
+<!---------------***** Navbar *****----------------->

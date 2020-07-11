@@ -1,0 +1,69 @@
+<div class="portfolio">
+    <div class="wrapper-section">
+        <!-------****************************--------->
+        <div class="row-section bg-section">
+            <div class="bg-section-1 grey-color">
+                <h1 class="din din-lg text-uppercase primary-color">
+                    te ofrecemos
+                </h1>
+                <h1 class="din din-spacing text-uppercase txt-bg">
+                    te ofrecemos
+                </h1>
+            </div>
+            <div class="bg-section-2 blue-color"></div>
+        </div>
+    
+        <!-------****************************--------->
+        <div class="row-section wrapper-content">
+    
+            <div class="wrapper-slider">
+    
+                <div class="swiper-button-prev btn-left">
+                    <div class="content-figure" [inlineSVG]="'assets/img/graphics/about_arrow.svg'"></div>
+                </div>
+                <!------------------- Slider ----------------------->
+                
+                <div class="swiper-container">
+                    
+                    <div class="swiper-wrapper">
+                    </div>
+                    
+                </div>
+                
+                <!---------------***** Slider *****----------------->
+
+                <div class="swiper-button-next btn-right">
+                    <div class="content-figure" [inlineSVG]="'assets/img/graphics/about_arrow.svg'"></div>
+                </div>
+                
+                <div class="create-items-hidden">
+
+                    <div id="item-{{ post.id }}" class="swiper-slide" *ngFor="let post of posts | async">
+
+                        <a class="img-link"  routerLink="/portafolio/ver/{{ post.id }}"></a>
+
+                        <h1 class="din text-uppercase">{{ post.title }}</h1>
+
+                        <div class="img-wrapper" *ngIf="post.image">
+                            <img [src]="post.image" alt="{{ post.title }}" class="thumbnail">
+                        </div>
+
+                        <h4>{{ post.excerpt }}</h4>
+
+                        <div class="btn">
+                            <a class="btn-full txt-XSm" data-text="VER DETALLES" routerLink="/portafolio/ver/{{ post.id }}">
+                                <span class="btn-overlay" data-reactid="111"></span>
+                                <span class="btn-content text-uppercase">ver detalles</span>
+                                <div class="content-figure" [inlineSVG]="'assets/img/graphics/about_arrow.svg'"></div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+</div>

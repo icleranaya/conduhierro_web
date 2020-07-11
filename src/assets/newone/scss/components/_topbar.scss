@@ -1,0 +1,446 @@
+.topbar {
+    top: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    position: fixed;
+    padding: ($spacer-1 - 0.4) 3rem;
+    justify-content: flex-end;
+    width: calc(#{$default-width} - 220px);
+
+    @include mediaXL {
+        width: calc(#{$default-width} - 205px);
+    }
+
+
+    @include mediaLg {
+        width: calc(#{$default-width} - 190px);
+    }
+
+
+    @include mediaMd {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+
+    @include mediaXSm {
+        padding: .5rem 1rem;
+    }
+
+
+    @include media-iphone-4 {
+        padding: .5rem 1rem;
+    }
+
+
+    &.dash-board {
+        background: transparent;
+
+        @include mediaMd {
+            background: #323942;
+        }
+
+
+        .sidebar-menu {
+            @include mediaMd {
+                display: flex;
+            }
+        }
+
+        .user-menu {
+            .user-menu-header {
+                .user-picture {
+                    width: 48px;
+                    height: 48px;
+
+                    @include media-iphone-4 {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.create, &.view, &.edit {
+        padding: 1rem 6rem 1rem 6rem;
+        background: $bg_4;
+
+        @include mediaXL {
+            padding: 1rem 5rem 1rem 5rem;
+        }
+
+
+        @include mediaLg {
+            padding: 1rem 4.5rem 1rem 4.5rem;
+        }
+
+
+        @include mediaMd {
+            width: $default-width;
+            padding: 1rem 4.5rem 1rem 4.5rem;
+        }
+
+
+        @include mediaSm {
+            padding: 1rem 1.5rem .5rem 1.5rem;
+        }
+
+
+        @include media-iphone-4 {
+            padding: .5rem 1.5rem .5rem 1.5rem;
+        }
+
+
+        .back-link {
+            display: flex;
+        }
+    }
+
+    .back-link {
+        display: none;
+        height: 40px;
+        align-items: center;
+        margin-right: auto;
+        margin-left: -4px;
+        cursor: pointer;
+
+        .icon-container {
+            width: 28px;
+            height: 28px;
+
+            svg {
+                width: 100%;
+                height: auto;
+                color: #444444;
+                stroke-width: 1.25px;
+                transition: .2s color ease;
+            }
+        }
+
+        p {
+            margin-left: .5rem;
+            color: #444444;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif, Helvetica, Arial;
+        }
+
+        &:hover {
+            .icon-container {
+                svg {
+                    color: $hover-color;
+                }
+            }
+        }
+    }
+
+    .sidebar-menu {
+        display: none;
+        width: 48px;
+        height: 48px;
+        margin-right: auto;
+
+        .icon-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            padding: 0.75rem 0.5rem;
+            justify-content: space-between;
+
+            .icon-burger {
+                width: 100%;
+                height: 4px;
+                background: #edf0f3;
+            }
+        }
+    }
+
+    .user-menu {
+        position: relative;
+        width: $default-width / 10;
+
+        @include mediaXL {
+            width: $default-width / 8;
+        }
+
+
+        @include mediaLg {
+            width: $default-width / 7;
+        }
+
+
+        @include mediaMd {
+            width: $default-width / 4;
+        }
+
+
+        .user-menu-header {
+            display: flex;
+            cursor: pointer;
+            font: 400 14px 'Roboto';
+            align-items: center;
+            justify-content: flex-end;
+
+            .user-picture {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                position: relative;
+                border-radius: 100%;
+                align-items: center;
+                justify-content: center;
+
+                .img-profile {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+                    border-radius: 100%;
+
+                    .profile-picture {
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        margin: auto;
+                        height: auto;
+                        position: absolute;
+                    }
+                }
+
+                .user-icon {
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    width: 95%;
+                    height: 95%;
+                    display: flex;
+                    z-index: -1;
+                    position: absolute;
+                    border-radius: 100%;
+                    background: #cccccc;
+                    align-items: center;
+                    justify-content: center;
+
+                    svg {
+                        width: 24px;
+                        height: auto;
+                    }
+                }
+            }
+
+            .user-name {
+                margin-right: $spacer-1 - 0.5;
+
+                span {
+                    letter-spacing: .4px;
+                    font-size: 15px;
+                }
+
+                @include mediaMd {
+                    display: none;
+                }
+            }
+        }
+
+        .user-options {
+            width: 0;
+            height: 0;
+            right: 0;
+            opacity: 0;
+            color: #232627;
+            overflow: hidden;
+            border-radius: 5px;
+            position: absolute;
+            margin-top: $spacer-0;
+            font: 400 14px 'Roboto';
+            background: #edf0f3;
+            transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, width .3s ease-in-out, height .3s ease-in-out;
+            box-shadow: 0 3px 26px 0px rgba(0, 0, 0, 0.25);
+
+            // background: $background_gradient_1;
+
+            &.open {
+                width: 300px;
+                height: 180px;
+                opacity: 1;
+                margin-top: $spacer-1;
+
+                // transition-duration: .3s;
+                // transition-property: opacity, margin-top, width, hetght;
+                // transition-timing-function: ease-out;
+
+                transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, width .3s ease-in-out, height .3s ease-in-out;
+
+                .options-item {
+                    height: auto;
+                    transition: height .3s ease-in-out;
+
+                    &.options-profile {
+                        .user-picture {
+                            opacity: 1;
+                            transition: opacity .3s ease-in-out .2s;
+
+                            .profile-picture {
+                                opacity: 1;
+                                transition: .2s opacity ease .2s;
+                            }
+
+                            .options-user-icon {
+                                background: $sixth;
+                                transition: .2s background-color ease;
+                            }
+                        }
+
+                        .options-user-name {
+                            opacity: 1;
+                            transition: opacity .3s ease-in-out;
+                        }
+                    }
+
+                    &.newone-btn {
+                        .btn-warning {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+
+            .options-item {
+                padding: 1rem;
+                transition: height .3s ease-in-out;
+
+                //  height: 0;
+
+                &.options-profile {
+                    display: flex;
+                    align-items: center;
+                    background: transparent;
+
+                    .user-picture {
+                        width: 5rem;
+                        height: 5rem;
+                        cursor: pointer;
+                        overflow: hidden;
+                        margin-right: 1rem;
+                        position: relative;
+                        border-radius: 100%;
+                        align-items: center;
+                        justify-content: center;
+
+                        .edit-tag {
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            z-index: 9;
+                            width: 5rem;
+                            height: 1.5rem;
+                            margin: auto;
+                            color: white;
+                            font-size: 13px;
+                            cursor: pointer;
+                            font-weight: 400;
+                            position: absolute;
+                            text-align: center;
+                            background: rgba(0, 0, 0, 0.35);
+                            font-family: 'Roboto', sans-serif, Helvetica, Arial;
+                        }
+
+                        .profile-picture {
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: auto;
+                            margin: auto;
+                            text-align: center;
+                            position: absolute;
+                            transition: .3s opacity ease;
+                        }
+
+                        .options-user-icon {
+                            flex: none;
+                            width: 5rem;
+                            height: 5rem;
+                            display: flex;
+                            overflow: hidden;
+                            background: white;
+                            align-items: center;
+                            justify-content: center;
+                            transition: .2s background-color ease;
+
+                            svg {
+                                width: 4rem;
+                                height: auto;
+                            }
+                        }
+                    }
+
+                    .user-picture {
+                        opacity: 0;
+                        transition: opacity .1s ease-in-out;
+                    }
+
+                    .options-user-name {
+                        opacity: 0;
+                        transition: opacity .3s ease-in-out;
+                    }
+
+                    .options-user-name {
+                        display: flex;
+                        flex-flow: column nowrap;
+
+                        .name {
+                            line-height: 1.5;
+                            letter-spacing: .6px;
+                            font: 600 14px 'Roboto';
+                            margin-bottom: 4px;
+                        }
+
+                        > .email {
+                            height: 1rem;
+                            line-height: 1.5;
+                            font: 400 13px 'Roboto';
+                        }
+                    }
+                }
+
+                &.newone-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    background: transparent;
+                    padding: 12px;
+
+                    .btn-warning {
+                        width: 150px;
+                        height: 42px;
+                        display: none;
+
+                        .btn-content {
+                            width: auto;
+                        }
+
+                        .options-icon {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-right: 6px;
+
+                            svg {
+                                width: 18px;
+                                height: auto;
+                                stroke-width: 2.75px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

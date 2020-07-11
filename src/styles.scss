@@ -1,1 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
+// ====================================
+// ------------------------------------
+//  * Table of Contents
+//  *
+//  * 1. - Animate      --> Line - 23
+//  * 2. - Swiper       --> Line - 28
+//  * 3. - Fonts        --> Line - 33
+//  * 4. - Variables    --> Line - 38
+//  * 5. - Mixins       --> Line - 43
+//  * 6. - Buttons      --> Line - 48
+//  * 7. - Text         --> Line - 53
+//  * 8. - Body         --> Line - 58
+//  * 9. - Menu         --> Line - 63
+//  * 10. - Home        --> Line - 68
+//  * 11. - Services    --> Line - 73
+//  * 12. - About       --> Line - 78
+//  * 13. - Portfolio   --> Line - 84
+//  * 14. - Contact     --> Line - 93
+//  * 15. - Footer      --> Line - 98
+//  * 16. - Lines       --> Line - 108
+//  * 17. - SingIn      --> Line - 113
+//  * 18. - NewOne      --> Line - 118
+//  * 19. - Product     --> Line - 124
+// ------------------------------------
+
+// ===============================
+//             Animate.css
+// ===============================
+@import "~animate.css/animate";
+
+// ===============================
+//             Swiper
+// ===============================
+@import "./assets/scss/vendor/swiper/swiper.min";
+
+// ===============================
+//             Fonts
+// ===============================
+@import "./assets/scss/libs/fonts";
+
+// ===============================
+//             Variables
+// ===============================
+@import "./assets/scss/libs/variables";
+
+// ===============================
+//             Mixins
+// ===============================
+@import "./assets/scss/libs/mixins";
+
+// ===============================
+//             Buttons
+// ===============================
+@import "./assets/scss/components/buttons";
+
+// ===============================
+//             Texts
+// ===============================
+@import "./assets/scss/components/text";
+
+// ===============================
+//             Body
+// ===============================
+@import "./assets/scss/components/body";
+
+// ===============================
+//             Menu
+// ===============================
+@import "./assets/scss/components/menu";
+
+// ===============================
+//             Home
+// ===============================
+@import "./assets/scss/layouts/home";
+
+// ===============================
+//             Services
+// ===============================
+@import "./assets/scss/layouts/services";
+
+// ===============================
+//             About
+// ===============================
+@import "./assets/scss/layouts/about";
+
+// ===============================
+//             Portfolio
+// ===============================
+@import "./assets/scss/layouts/portfolio";
+
+// ===============================
+//             Contact
+// ===============================
+@import "./assets/scss/layouts/contact";
+
+// ===============================
+//             Footer
+// ===============================
+@import "./assets/scss/components/footer";
+
+// ===============================
+//             Lines
+// ===============================
+@import "./assets/scss/components/lines";
+
+// ===============================
+//             SingIn
+// ===============================
+@import "./assets/scss/layouts/singin";
+
+// ===============================
+//             NewOne
+// ===============================
+@import "./assets/newone/scss/newone";
+
+// ===============================
+//             Product
+// ===============================
+@import "./assets/scss/layouts/product";

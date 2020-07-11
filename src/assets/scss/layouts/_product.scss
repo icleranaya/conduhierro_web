@@ -1,0 +1,791 @@
+.product {
+    width: 100%;
+    height: 100vh;
+
+    .product-wrapper {
+        height: 100%;
+
+        .wrapper-elements {
+            height: 100%;
+
+            @include mediaMd {
+                overflow-y: scroll;
+                overflow-x: hidden;
+            }
+
+
+            .content-container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                flex-flow: row nowrap;
+
+                @include mediaMd {
+                    flex-flow: column;
+                    padding-top: 6rem;
+                    min-height: 100%;
+                    height: unset;
+                }
+
+
+                .back-link {
+                    top: 13%;
+                    left: 14%;
+                    height: 3rem;
+                    display: flex;
+                    position: absolute;
+                    align-items: center;
+                    transition: 0.4s left cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                    @include mediaLg {
+                        left: 12%;
+                    }
+
+
+                    @include mediaMd {
+                        position: static;
+                        margin-left: 2rem;
+                        align-self: flex-start;
+                    }
+
+
+                    .content-figure {
+                        display: flex;
+                        align-items: center;
+                        margin-right: 1.25rem;
+
+                        svg {
+                            width: 100%;
+
+                            path {
+                                fill: $primary-color;
+                                transition: .2s fill;
+                            }
+                        }
+                    }
+
+                    p {
+                        font-weight: 500;
+                        color: $primary-color;
+                        transition: .2s color;
+                    }
+
+                    &:hover {
+                        left: 13.5%;
+
+                        @include mediaLg {
+                            left: 11.5%;
+                        }
+
+
+                        .content-figure {
+                            svg {
+                                path {
+                                    fill: $default-color;
+                                    transition: .4s fill ease;
+                                }
+                            }
+                        }
+
+                        p {
+                            color: $default-color;
+                            transition: .4s color ease;
+                        }
+                    }
+                }
+
+                //===================================================
+                //                   Content-1
+                //===================================================
+
+                .content-1 {
+                    width: 75%;
+                    height: 65%;
+                    display: flex;
+                    align-items: center;
+
+                    @include mediaMd {
+                        width: 100%;
+                        height: 70%;
+                        padding: 2rem;
+                    }
+
+
+                    .content-row {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-flow: row nowrap;
+
+                        @include mediaMd {
+                            flex-flow: column;
+                            align-items: center;
+                        }
+
+
+                        .title-product {
+                            display: none;
+                            margin-bottom: .75rem;
+
+                            @include mediaMd {
+                                display: flex;
+                                flex-flow: column;
+                                align-items: center;
+                            }
+
+
+                            .title {
+                                @include mediaMd {
+                                    text-align: center;
+                                }
+                            }
+
+                            .sub-title {
+                                @include mediaMd {
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                        .product-gallery {
+                            flex: 55%;
+                            width: 55%;
+                            height: 100%;
+                            display: flex;
+                            flex-flow: column;
+                            position: relative;
+                            padding-left: 16rem;
+                            justify-content: space-between;
+
+                            @include mediaXL {
+                                padding-left: 10rem;
+                            }
+
+
+                            @include mediaMd {
+                                padding: 0;
+                                width: 80%;
+                                align-items: center;
+                            }
+
+
+                            //=====================================
+                            //==========    Swiper   ==============
+
+                            .swiper-wrapper-container {
+                                width: 100%;
+                                height: 70%;
+                                position: relative;
+                                background-color: rgb(255, 255, 255);
+
+                                @include mediaMd {
+                                    width: 60%;
+                                    margin-bottom: 5.5rem;
+                                }
+
+
+                                @include mediaXSm {
+                                    margin-bottom: 4rem;
+                                }
+
+
+                                .swiper-container {
+                                    height: 100%;
+
+                                    .swiper-wrapper {
+                                        height: 100% !important;
+
+                                        .swiper-slide {
+                                            height: 100%;
+                                            display: flex;
+                                            padding: 0 1rem;
+                                            align-items: center;
+                                            justify-content: flex-end;
+
+                                            .wrapper-img {
+                                                width: 100%;
+                                                height: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            //==========    Swiper   ==============
+                            //=====================================
+
+                            .next-img {
+                                height: 20%;
+                                width: 100%;
+                                display: flex;
+
+                                @include mediaXSm {
+                                    display: none;
+                                }
+
+
+                                .img-thumb {
+                                    height: 100%;
+                                    cursor: pointer;
+                                    margin-right: .5rem;
+                                    flex: $default-width / 4;
+
+                                    &:last-child {
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        .product-description {
+                            flex: 45%;
+                            display: flex;
+                            padding: 0 3rem;
+                            flex-flow: column nowrap;
+
+                            @include mediaXL {
+                                padding: 0 2.5rem;
+                            }
+
+
+                            @include mediaMd {
+                                align-items: center;
+                                margin-top: 2rem;
+                            }
+
+
+                            .title-product {
+                                display: block;
+                                margin-bottom: .75rem;
+
+                                @include mediaMd {
+                                    display: none;
+                                }
+
+
+                                .title {
+                                    @include mediaXL {
+                                        font-size: 3.5rem;
+                                    }
+
+
+                                    @include mediaLg {
+                                        font-size: 3rem;
+                                    }
+                                }
+
+                                .sub-title {
+                                    @include mediaLg {
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+
+                            .description {
+                                margin: auto 0;
+
+                                p {
+                                    line-height: 2.25;
+                                    font-size: 18px;
+
+                                    @include mediaXL {
+                                        font-size: 15px;
+                                    }
+
+
+                                    @include mediaLg {
+                                        font-size: 13px;
+                                    }
+
+
+                                    @include mediaMd {
+                                        text-align: center;
+                                    }
+                                }
+                            }
+
+                            .aviable-btn {
+                                @include mediaMd {
+                                    display: flex;
+                                    margin-top: 2rem;
+                                    flex-flow: column;
+                                    align-items: center;
+                                }
+
+
+                                p {
+                                    line-height: 1.5;
+                                    margin-top: 0.5rem;
+                                    margin-bottom: 1rem;
+                                    color: $primary-color;
+
+                                    @include mediaMd {
+                                        text-align: center;
+                                    }
+                                }
+
+                                .btn-container {
+                                    width: max-content;
+
+                                    .btn-full {
+                                        &::before {
+                                            margin-left: .75rem;
+                                        }
+                                    }
+
+                                    .btn-content {
+                                        .content-figure {
+                                            margin-left: .5rem;
+                                            transform: rotate(180deg);
+
+                                            svg {
+                                                path {
+                                                    fill: $white-default;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //===================================================
+                //                   Content-2
+                //===================================================
+
+                .content-2 {
+                    width: 25%;
+                    height: 100%;
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: center;
+                    background: $primary-color;
+
+                    @include mediaMd {
+                        width: 100%;
+                        padding: 4rem 0;
+                        align-items: center;
+                    }
+
+
+                    @include mediaXSm {
+                        padding: 2.5rem 0;
+                    }
+
+
+                    .next-product {
+                        width: 70%;
+                        margin-top: 10rem;
+
+                        @include mediaMd {
+                            margin: 0;
+                            width: 35%;
+                            min-height: 20rem;
+                        }
+
+
+                        @include mediaXSm {
+                            display: flex;
+                            width: 55%;
+                            flex-direction: column;
+                            align-items: center;
+                            min-height: 12rem;
+                        }
+
+
+                        @include media-iphone-4 {
+                            width: 60%;
+                        }
+
+
+                        .img-miniature {
+                            width: 90%;
+                            display: flex;
+                            position: relative;
+                            background: $white-default;
+
+                            @include mediaXSm {
+                                width: 80%;
+                            }
+
+
+                            .thumbnail {
+                                width: 100%;
+                            }
+
+                            &:before {
+                                content: '';
+                                height: 100%;
+                                width: 1.25rem;
+                                left: -1.25rem;
+                                position: absolute;
+                                background: $default-color;
+
+                                @include mediaLg {
+                                    width: 1rem;
+                                    left: -1rem;
+                                }
+                            }
+                        }
+
+                        .next-link {
+                            display: flex;
+                            margin-top: 1rem;
+                            align-items: center;
+                            justify-content: flex-end;
+                            transition: 0.4s transform cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                            p {
+                                line-height: 2;
+                                margin-right: 1rem;
+                                letter-spacing: .5px;
+                                color: $white-default;
+                            }
+
+                            .content-figure {
+                                margin-right: 4rem;
+                                transform: rotate(180deg);
+
+                                svg {
+                                    path {
+                                        fill: $white-default;
+                                    }
+                                }
+                            }
+                        }
+
+                        .product-id {
+                            h3 {
+                                margin-left: 1rem;
+                                color: $white-default;
+
+                                @include mediaXL {
+                                    font-size: 2rem;
+                                }
+
+
+                                @include mediaLg {
+                                    font-size: 1.75rem;
+                                }
+
+
+                                @include mediaXSm {
+                                    margin: 0;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            .next-link {
+                                transform: translateX(5px);
+                            }
+                        }
+                    }
+                }
+
+                //====================================================
+
+                .title-product {
+                    color: $primary-color;
+
+                    .title {
+                        line-height: 1;
+                        margin-bottom: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-figure {
+        width: 1.2rem;
+
+        @include mediaXL {
+            width: 1rem;
+        }
+
+
+        @include mediaLg {
+            width: .8rem;
+        }
+    }
+
+    //=====================================
+    //======    Swiper-Pagination   =======
+
+    .swiper-pagination {
+        width: 11%;
+        top: 0;
+        bottom: 0;
+        left: -7rem;
+        display: flex;
+        position: absolute;
+        align-items: flex-end;
+        justify-content: center;
+        flex-flow: column nowrap;
+
+        @include mediaXL {
+            left: -4rem;
+        }
+
+
+        @include mediaMd {
+            left: 0;
+            right: 0;
+            bottom: -19.5rem;
+            margin: auto;
+            transform: rotate(-90deg);
+        }
+
+
+        @include mediaXSm {
+            bottom: -12rem;
+        }
+
+
+      
+
+
+        .swiper-pagination-bullet {
+            opacity: 1;
+            display: flex;
+            position: relative;
+            margin: $spacer-2 0;
+            align-items: center;
+            justify-content: center;
+            background: rgba(185, 185, 185, 0.5);
+            transition: .3s background ease-out;
+
+            @include mediaXSm {
+                width: 6px;
+                height: 6px;
+            }
+
+
+            &:focus {
+                outline: none;
+            }
+
+            &:before {
+                content: '';
+                z-index: -1;
+                width: 0;
+                height: 0;
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(185, 185, 185, 0.5);
+                transition-duration: .3s;
+                transition-property: width, height;
+                transition-timing-function: ease-out;
+            }
+
+            &:after {
+                width: 0;
+                height: 2px;
+                content: "";
+                position: absolute;
+                left: $spacer-5 * -4 - 1;
+                background: rgba(185, 185, 185, 0.5);
+                transition: all .3s ease-in-out;
+
+                @include mediaMd {
+                    left: -3.25rem;
+                }
+
+
+                @include mediaXSm {
+                    left: -2.75rem;
+                }
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background: $default-color;
+
+            &:before {
+                width: 20px;
+                height: 20px;
+
+                @include mediaXSm {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+
+            &:after {
+                top: $spacer-1 - 0.8;
+                width: $spacer-5 * 4;
+                transition-duration: .3s;
+                transition-property: width, top;
+                transition-timing-function: ease-out;
+
+                @include mediaMd {
+                    width: 2.25rem;
+                }
+
+
+                @include mediaXSm {
+                    width: 2rem;
+                    top: 0.15rem;
+                }
+            }
+        }
+    }
+}
+
+.Modal {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+    position: absolute;
+
+    .contact {
+        opacity: 0;
+        transform: scale(0);
+        transition: transform, opacity, .3s ease-in-out;
+    }
+
+    &.open {
+        z-index: 100000;
+
+        .contact {
+            opacity: 1;
+            transform: scale(1);
+            transition: transform, opacity, .4s ease-in-out;
+        }
+
+        .btn-modal-menu {
+            z-index: 10000;
+            cursor: pointer;
+            padding: $spacer-3;
+            position: absolute;
+            width: $burgerWidth;
+            height: $burgerWidth;
+            right: $menu-width / 4 - 10;
+            background-color: $none-color;
+            transition: background .3s ease-in-out;
+
+            @include mediaLg {
+                width: 105px;
+                height: 95px;
+            }
+
+
+            @include mediaMd {
+                padding: 1.5rem 1rem;
+                width: 72px;
+                height: 72px;
+            }
+
+
+            @include mediaXSm {
+                padding: 1rem;
+                width: 64px;
+                height: 58px;
+            }
+
+
+            @include media-iphone-4 {
+                width: 56px;
+                height: 56px;
+                padding: 1rem;
+            }
+
+
+            .btn-modal-container {
+                position: relative;
+
+                .btn-modal-inner {
+                    left: 0px;
+                    top: 20px;
+                    width: $menu-width;
+                    position: absolute;
+                    transition: border .2s ease-in .2s;
+                    border: $burgerBarHeight solid $white-default;
+
+                    @include mediaLg {
+                        top: 10px;
+                    }
+
+
+                    @include media-iphone-4 {
+                        border: 1px solid $white-default;
+                    }
+
+
+                    &:before,
+                    &:after {
+                        content: '';
+                        width: $menu-width;
+                        position: absolute;
+                        left: -$burgerBarHeight;
+                        border: $burgerBarHeight solid $white-default;
+                        transition: top 0.2s ease-in 0.32s, transform 0.2s ease-in;
+
+                        @include media-iphone-4 {
+                            border: 1px solid $white-default;
+                        }
+                    }
+
+                    &:before {
+                        top: -13px;
+
+                        @include mediaMd {
+                            top: -13px;
+                        }
+
+
+                        @include mediaXXSm {
+                            top: -12px;
+                        }
+
+
+                        @include media-iphone-4 {
+                            left: -1px;
+                            top: -10px;
+                        }
+                    }
+
+                    &:after {
+                        top: 7px;
+
+                        @include mediaMd {
+                            top: 8px;
+                        }
+
+
+                        @include media-iphone-4 {
+                            left: -1px;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                .btn-modal-container {
+                    .btn-modal-inner {
+                        border-color: transparent;
+                        transition: border-color ease-in .1s;
+
+                        &:before {
+                            top: -$burgerBarHeight;
+                            transform: rotate(-45deg);
+                            transition: top ease-out .2s, transform .2s ease-out .32s, border 0s ease .3s;
+                        }
+
+                        &:after {
+                            top: -$burgerBarHeight;
+                            transform: rotate(45deg);
+                            transition: top ease-out .2s, transform .2s ease-out .32s, border 0s ease .3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

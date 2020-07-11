@@ -1,0 +1,97 @@
+.wrapper-sidebar {
+    width: 220px;
+    position: fixed;
+    height: $default-width;
+    background: $background_gradient_1;
+
+    .header-sidebar {
+        padding: 0 6px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column nowrap;
+        background: $background_2;
+        height: ($default-width / 4) - 15;
+
+        .link-logo {
+            padding: 10px;
+            font-weight: 600;
+            width: $default-width;
+            color: $white-default;
+        }
+    }
+
+    .wrapper-navbar {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+
+        .adm-navbar {
+            display: flex;
+            height: ($default-width / 2) + ($default-width / 4);
+    
+            .adm-nav {
+                margin: 0;
+                width: $default-width;
+                padding-inline-start: 0;
+
+                li {
+                    &.nav-item {
+                        padding: 0 0 0 6px;
+                        width: $default-width;
+                        border-bottom: 1px solid #373C42;
+
+                        >a {
+                            &.link-item {
+                                margin: 8px 0;
+                                padding: 10px;
+                                display: flex;
+                                color: $grey_1;
+                                cursor: pointer;
+                                font-size: 12px;
+                                font-weight: 500;
+                                position: relative;
+                                border-radius: 3px;
+                                white-space: nowrap;
+                                align-items: center;
+                                border-top-right-radius: 0;
+                                border-bottom-right-radius: 0;
+            
+                                &.active,
+                                &:hover,
+                                &:focus {
+                                    z-index: 10;
+                                    color: $white-default;
+                                    background: $default-purple;
+                                    background: $background_gradient_2;
+                                    box-shadow: 0 19px 38px rgba(0,0,0,0.20), 0 15px 12px rgba(0,0,0,0.15);
+            
+                                    .menu-icon {
+
+                                        svg {
+                                            #Dribbble-Dark-Preview {
+                                                fill: $white-default;
+                                            }
+                                        }
+                                    }
+                                }
+            
+                                .menu-icon {
+                                    width: 15px;
+                                    margin-right: 13px;
+                                    svg {
+                                        width: 13px;
+                                        
+                                        #Dribbble-Dark-Preview {
+                                            fill: $grey_1;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

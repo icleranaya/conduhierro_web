@@ -1,0 +1,88 @@
+.btn {
+    .btn-primary {
+        font-weight: 500;
+        color: $primary-color;
+
+        @include btn-style(200px, 45px, 18px, $primary-color, $default-color);
+    }
+
+    .btn-secondary {
+        font-weight: 500;
+        color: $white-default;
+
+        @include btn-style(200px, 45px, 18px, $white-default, rgba($white-default, 0.6));
+    }
+
+    .btn-color {
+        font-weight: 600;
+        color: $white-default;
+
+        @include btn-style-2(max-content, 12px, 18px, false, $default-color, $grey-primary, $white-default);
+    }
+
+    .btn-full {
+        font-weight: 500;
+        color: $white-default;
+
+        @include btn-style-2(100%, 14px, unset, false, $default-color, $four-color, $white-default);
+
+        .content-figure {
+            height: 1.2rem;
+
+            @include mediaXL {
+                height: 1.1rem;
+            }
+
+
+            @include mediaLg {
+                height: 1rem;
+            }
+        }
+    }
+
+    .whatsapp-btn {
+        font-weight: 500;
+        color: $white-default;
+
+        @include btn-style-2(100%, 2vh, unset, false, $default-color, $white-default, $second-color);
+    }
+}
+
+.instagram-btn {
+    display: flex;
+    align-items: center;
+    transition: .3s color ease-in;
+
+    :nth-child(1) {
+        margin-right: .3rem;
+    }
+
+    .instagram-link {
+        font-weight: 600;
+
+        //font-size: 14px;
+        letter-spacing: .5px;
+
+        @include mediaXSm {
+            //  font-size: 14px;
+            line-height: 1rem;
+        }
+    }
+
+    .instagram-icon {
+        svg {
+            width: 2rem;
+            height: 2rem;
+
+            @include mediaLg {
+                width: 1.4rem;
+                height: 1.4rem;
+            }
+        }
+    }
+
+    &:hover {
+        color: $default-color !important;
+        transition: .3s color ease-out;
+    }
+}

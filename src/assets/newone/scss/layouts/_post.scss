@@ -1,0 +1,836 @@
+.content {
+    display: flex;
+    position: relative;
+    overflow-y: scroll;
+    width: $default-width;
+    height: $default-width;
+    flex-flow: column nowrap;
+    background: $white-default;
+    justify-content: flex-start;
+
+    @include mediaSm {
+        overflow-y: unset;
+    }
+
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        border-radius: 20px;
+        background: transparent;
+
+        @include mediaMd {
+            display: none;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background: rgba($grey-second, 0.5);
+        box-shadow: inset 0 0 6px rgba($black-default, 0.1);
+    }
+
+    &::-webkit-scrollbar-track {
+        margin: 3px auto;
+        border-radius: 10px;
+        background-color: transparent;
+    }
+
+    .bg-4 {
+        //position: absolute;
+        width: 100%;
+        height: 40%;
+        border-bottom-left-radius: $border-radius_3;
+        border-bottom-right-radius: $border-radius_3;
+
+        @include mediaXL {
+            height: 42%;
+        }
+
+
+        @include mediaLg {
+            height: 44%;
+        }
+
+
+        @include mediaMd {
+            width: 100vw;
+            height: 35%;
+        }
+
+
+        @include mediaXSm {
+            height: 40%;
+        }
+
+
+        @include mediaXSm-large {
+            height: 35%;
+        }
+
+
+        @include mediaXXSm {
+            height: 45%;
+        }
+
+
+        @include mediaXXSm-large {
+            height: 35%;
+        }
+
+
+        @include media-iphone-4 {
+            height: 300px;
+        }
+    }
+
+    .wrapper-post {
+        z-index: 1;
+        display: flex;
+        position: relative;
+        height: $default-width;
+        flex-flow: column nowrap;
+        margin: 0 6rem;
+        margin-top: calc(-304px - 42px);
+
+        //min-height: 942px;
+
+        @include mediaXL {
+            margin: 0 5rem;
+            margin-top: calc(-304px - 42px);
+        }
+
+
+        @include mediaLg {
+            margin: 0 4.5rem;
+            margin-top: calc(-304px - 42px);
+        }
+
+
+        @include mediaMd {
+            margin: 0;
+            width: 100vw;
+            padding: 0 4.5rem;
+            overflow-x: hidden;
+            align-items: center;
+            margin-top: calc(-315px);
+        }
+
+
+        @include mediaSm {
+            width: 100%;
+            padding: 0 1.5rem;
+            overflow-x: hidden;
+            align-items: center;
+        }
+
+
+        @include mediaXSm {
+            margin-top: -288px;
+        }
+
+
+        @include media-iphone-4 {
+            margin-top: -192px;
+        }
+
+
+        .header-post {
+            display: flex;
+            align-items: center;
+            width: $default-width;
+            min-height: 200px;
+            margin: 5rem 0 1.5rem 0;
+
+            @include mediaXL {
+                margin: 6rem 0 0.5rem 0;
+            }
+
+
+            @include mediaLg {
+                margin: 6.5rem 0 0 0;
+            }
+
+
+            @include mediaMd {
+                min-height: 142px;
+                margin: 5rem 0 3.5rem 0;
+            }
+
+
+            @include mediaSm {
+                min-height: 180px;
+                justify-content: center;
+                flex-flow: column-reverse;
+            }
+
+
+            @include media-iphone-4 {
+                margin: 0rem 0 2rem 0;
+            }
+
+
+            .responsive-elements {
+                top: 0;
+                right: 0;
+                width: 100%;
+                display: none;
+                padding: 0 4.5rem;
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+
+                @include mediaMd {
+                    display: flex;
+                }
+
+
+                @include mediaXSm {
+                    padding: 0 1.5rem;
+                }
+
+
+                @include media-iphone-4 {
+                    top: .5rem;
+                }
+
+
+                .back-link {
+                    margin-right: auto;
+                }
+
+                .btn-group {
+                    padding: 0;
+                    width: auto;
+                    right: 0;
+                    display: block;
+                    margin-left: auto;
+                    height: max-content;
+                    position: relative;
+
+                    .newone-btn {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .image-wrapper {
+                width: 285px;
+                min-height: 160px;
+                max-height: 180px;
+                border-radius: 20px;
+
+                @include mediaXL {
+                    width: 250px;
+                    min-height: 140px;
+                    max-height: 160px;
+                }
+
+
+                @include mediaXSm {
+                    width: 240px;
+                    min-height: 100px;
+                    max-height: 135px;
+                }
+
+
+                @include media-iphone-4 {
+                    width: 220px;
+                    min-height: 75px;
+                    max-height: 125px;
+                }
+
+
+                .img-content {
+                    height: 160px;
+
+                    @include mediaLg {
+                        &.none-img {
+                            min-height: 100px;
+                        }
+                    }
+                }
+            }
+
+            .title-wrapper {
+                display: block;
+                margin-left: $spacer-5;
+                width: $default-width - $default-width / 3;
+
+                @include mediaMd {
+                    width: 65%;
+                    margin-left: 1rem;
+                }
+
+
+                @include mediaSm {
+                    width: 100%;
+                    margin: 0 0 1rem 0;
+                    display: flex;
+                    justify-content: center;
+                }
+
+
+                h1 {
+                    font: 300 36px 'Roboto';
+
+                    @include mediaXL {
+                        font-size: 32px;
+                    }
+
+
+                    @include mediaMd {
+                        font-size: 28px;
+                    }
+
+
+                    @include mediaXSm {
+                        font-size: 24px;
+                    }
+
+
+                    @include mediaXXSm {
+                        font-size: 22px;
+                    }
+                }
+
+                .input-container {
+                    margin: auto;
+                    position: relative;
+                    width: $default-width;
+                    margin-bottom: $spacer-5;
+
+                    @include mediaSm {
+                        margin: 0;
+                    }
+
+                    .label {
+                        left: 0;
+                        top: 20px;
+                        cursor: text;
+                        display: block;
+                        font-size: 36px;
+                        font-weight: 300;
+                        position: absolute;
+                        transform-origin: 0 0;
+                        color: rgba($black-default, 0.7);
+                        transition: all .25s ease-in-out;
+
+                        @include mediaMd {
+                            left: 1rem;
+                        }
+
+
+                        @include mediaSm {
+                            left: 0;
+                            width: 130%;
+                            font-size: 24px;
+                            display: flex;
+                            justify-content: center;
+                        }
+
+
+                        @include media-iphone-4 {
+                            font-size: 22px;
+                        }
+                    }
+
+                    .border {
+                        left: 0;
+                        z-index: 1;
+                        height: 2px;
+                        bottom: -8px;
+                        position: absolute;
+                        transform: scaleX(0);
+                        transform-origin: 0 0;
+                        width: $default-width;
+                        background: $black-default;
+                        transition: all .4s ease-in-out;
+                    }
+
+                    input {
+                        border: 0;
+                        z-index: 1;
+                        width: 100%;
+                        height: 45px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        background: none;
+                        border-radius: 0;
+                        padding: 12px 0 0;
+                        position: relative;
+                        font-family: inherit;
+                        -webkit-appearance: none;
+                        color: rgba($black-default, 0.7);
+                        transition: all .4s ease-in-out;
+
+                        @include mediaSm {
+                            text-align: center;
+                        }
+
+                        &:not(:placeholder-shown) + span {
+                            top: -12px;
+                            color: rgba($black-default, 0.7);
+                            transform: translateY(-26px) scale(0.75);
+
+                            @include mediaMd {
+                                top: 16px;
+                            }
+                        }
+
+                        &:focus {
+                            outline: none;
+                            background: none;
+
+                            + span {
+                                top: -22px;
+                                color: $black-default;
+                                transform: translateY(-26px) scale(0.75);
+
+                                + .border {
+                                    transform: scaleX(1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .editor-wrapper {
+            display: flex;
+            overflow: hidden;
+            padding: $spacer-0;
+            width: $default-width;
+            box-shadow: $Shadow_2;
+            flex-flow: column nowrap;
+            height: $default-width / 2;
+            min-height: $default-width / 2;
+
+            quill-editor {
+                width: $default-width;
+                height: $default-width;
+
+                .ql-toolbar {
+                    border: none;
+                    font-size: 22px;
+                    width: $default-width;
+                    background: $grey-light;
+                    margin-bottom: $spacer-1;
+                }
+
+                .ql-container {
+                    border: none;
+                    width: $default-width;
+                    height: $default-width - 10;
+
+                    .ql-editor {
+                        padding: 12px 20px;
+
+                        &:before {
+                            left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .content-post {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            font-family: 'Roboto', sans-serif, Helvetica, Arial;
+
+            @include mediaSm {
+                font-size: 16px;
+            }
+
+
+            @include mediaXSm {
+                font-size: 14px;
+            }
+        }
+
+        .img-slider-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: $spacer-5;
+            margin-bottom: $spacer-1;
+
+            @include mediaMd {
+                overflow-x: scroll;
+                overflow-y: visible;
+                height: 16rem;
+                min-height: 12rem;
+                width: calc(100% + 10rem);
+                align-items: center;
+                justify-content: space-between;
+                margin: 1rem 0;
+                align-self: flex-start;
+                margin-left: -5.5rem;
+            }
+
+
+            @include mediaXSm {
+                height: 13rem;
+            }
+
+
+            > .card {
+                overflow: hidden;
+                box-shadow: none;
+                min-height: 280px;
+                margin: 0 $spacer-3;
+                background: $quarter;
+                flex: $default-width / 4;
+                box-shadow: 0 5px 30px -12px rgba(0, 0, 0, 0.3);
+
+                @include mediaXL {
+                    min-height: 200px;
+                }
+
+
+                @include mediaLg {
+                    margin: 0;
+                    min-height: 160px;
+                }
+            }
+        }
+
+        .card-container {
+            width: 23%;
+            height: auto;
+
+            // @include mediaXL {
+            //     height: 180px;
+            // }
+
+            // @include mediaLg {
+            //     height: 160px;
+            //  }
+
+            @include mediaMd {
+                width: 42%;
+                flex: none;
+                padding-right: 4.5rem;
+                margin-left: -2.5rem;
+
+                &:nth-child(1) {
+                    margin-left: 5.5rem;
+                }
+            }
+
+
+            @include mediaSm {
+                width: 60%;
+                margin-left: -3rem;
+            }
+
+
+            @include mediaXXSm {
+                width: 65%;
+            }
+
+
+            @include media-iphone-4 {
+                width: 70%;
+            }
+        }
+
+        .image-wrapper {
+            width: 100%;
+            min-height: 180px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 30px -12px rgba(0, 0, 0, 0.3);
+
+            @include mediaXL {
+                min-height: 160px;
+            }
+
+
+            @include mediaLg {
+                min-height: 135px;
+            }
+
+
+            @include mediaSm {
+                margin: 0;
+                flex: none;
+            }
+
+
+            &.read {
+                cursor: auto;
+            }
+
+            .img-content {
+                z-index: 1;
+                display: flex;
+                max-height: 200px;
+                height: 240px;
+                min-height: 180px;
+                position: relative;
+                border-radius: 20px;
+                align-items: center;
+                justify-content: center;
+                background: #f4f4f4;
+
+                @include mediaXL {
+                    max-height: 160px;
+                    min-height: 160px;
+                }
+
+
+                @include mediaLg {
+                    max-height: 150px;
+                    min-height: 140px;
+                }
+
+
+                @include mediaXSm {
+                    max-height: 156px;
+                    min-height: 140px;
+                }
+
+
+                img {
+                    position: relative;
+                    height: 100%;
+                    width: auto;
+                }
+
+                &.none-img {
+                    opacity: 0;
+                    height: auto;
+                    min-height: 200px;
+
+                    @include mediaXL {
+                        max-height: 160px;
+                        min-height: 150px;
+                    }
+
+
+                    @include mediaLg {
+                        min-height: 140px;
+                    }
+                }
+            }
+
+            .img-icon {
+                opacity: 1;
+                display: flex;
+                background: $bg_6;
+                position: absolute;
+                align-items: center;
+                border-radius: 20px;
+                width: $default-width;
+                height: $default-width;
+                justify-content: center;
+
+                svg {
+                    width: 72px;
+                    height: auto;
+
+                    @include mediaMd {
+                        display: none;
+                    }
+
+
+                    #Dribbble-Dark-Preview {
+                        fill: $grey_1;
+                    }
+                }
+            }
+
+            .input-file {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                z-index: 3;
+                cursor: pointer;
+                overflow: hidden;
+                position: absolute;
+                width: $default-width;
+                height: $default-width;
+            }
+
+            .overlay {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                z-index: 2;
+                display: flex;
+                position: absolute;
+                align-items: center;
+                color: $white-default;
+                justify-content: center;
+                border-radius: $border-radius;
+                transition: opacity .6s ease;
+                background: rgba(0, 0, 0, 0.3);
+
+                @include mediaMd {
+                    opacity: 1;
+                    z-index: 0;
+                    background: rgb(181, 181, 181);
+                }
+
+
+                .signo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: $default-width;
+
+                    svg {
+                        width: 72px;
+                        height: auto;
+                        color: #d8d8d8;
+                        stroke: currentcolor;
+                        stroke-width: 1.4px;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+
+                        @include mediaMd {
+                            width: 64px;
+                            color: #e8e8e8;
+                        }
+
+
+                        @include mediaSm {
+                            width: 52px;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .overlay {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .excerpt-wrapper {
+            width: auto;
+            height: auto;
+            padding: $spacer-1;
+            margin-top: .5rem;
+            margin-bottom: 5rem;
+
+            @include mediaMd {
+                width: 100%;
+                margin-bottom: 2.5rem;
+            }
+
+
+            @include mediaSm {
+                min-height: 11rem;
+                margin-bottom: 2rem;
+            }
+
+
+            .header-card {
+                display: flex;
+                flex-flow: row nowrap;
+                width: $default-width;
+                margin-bottom: $spacer-1;
+                justify-content: flex-start;
+
+                h3 {
+                    font-size: 1.125rem;
+                    color: $second;
+                }
+
+                .menu-icon {
+                    width: 15px;
+                    margin-right: 15px;
+
+                    svg {
+                        width: 20px;
+
+                        #Dribbble-Dark-Preview {
+                            fill: $grey_1;
+                        }
+                    }
+                }
+            }
+
+            .content-item {
+                margin: 1rem;
+                width: 100%;
+                min-height: 2rem;
+            }
+
+            textarea {
+                width: $default-width;
+                height: 50px;
+                border: none;
+                outline: none;
+                font: 400 14px 'Roboto';
+
+                &::placeholder {
+                    font: 400 13px 'Roboto';
+                    font-style: italic;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .btn-group {
+            right: 0;
+            bottom: 0;
+            padding: 0;
+            z-index: 10;
+            width: auto;
+            display: flex;
+            position: fixed;
+            height: max-content;
+            align-items: flex-end;
+            justify-content: center;
+            flex-flow: column-reverse;
+            margin: 0 1.5rem 1.5rem 0;
+
+            @include mediaXL {
+                margin: 0 1.25rem 1.5rem 0;
+            }
+
+
+            @include mediaLg {
+                margin: 0 14px 1.5rem 0;
+            }
+
+
+            .newone-btn {
+                .btn-acent {
+                    margin-bottom: 1rem;
+
+                    @include mediaSm {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .btn-primary {
+                    .menu-icon {
+                        svg {
+                            stroke-width: 2.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

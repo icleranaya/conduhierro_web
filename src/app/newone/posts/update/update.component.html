@@ -1,0 +1,194 @@
+<!------------------- Dashboard ----------------------->
+<div class="dashboard">
+
+    <div class="content">
+
+        <!-------****************************--------->
+        <div class="bg-4"></div>
+
+        <!------------------- Post ----------------------->
+        <div class="wrapper-post">
+
+            <!------------------- Header Post ----------------------->
+            <div class="header-post">
+
+                <!-------****************************--------->
+                <div class="image-wrapper">
+
+                    <div class="img-content" [class.none-img]="!image">
+                        <img class="img-post" [src]="image || '//:0'">
+                    </div>
+
+                    <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                    <input class="input-file" type="file" name="file" id="file" (change)="uploadImage($event)">
+
+                    <!-------****************************--------->
+                    <div class="overlay">
+                        <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
+                    </div>
+
+                </div>
+
+                <!-------****************************--------->
+                <div class="title-wrapper">
+                    <label for="title" class="input-container">
+                        <input type="text" [(ngModel)]="title" #ctrl="ngModel">
+                        <span class="label">Título de la entrada</span>
+                        <span class="border"></span>
+                    </label>
+                </div>
+
+            </div>
+            <!---------------***** Header Post *****----------------->
+
+            <!------------------- Editor Post ----------------------->
+            <div class="editor-wrapper card">
+                <quill-editor [(ngModel)]="content" #ctrl="ngModel" [modules]="config"></quill-editor>
+            </div>
+            <!---------------***** Editor Post *****----------------->
+
+            <!------------------- Slider Post ----------------------->
+            <div class="img-slider-wrapper">
+
+                <!-------****************************--------->
+                <div class="card-container">
+
+                    <div class="card image-wrapper">
+
+                        <!-------****************************--------->
+                        <div class="img-content" [class.none-img]="!sliderOne">
+                            <img class="img-post" [src]="sliderOne || '//:0'">
+                        </div>
+                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                        <input class="input-file" type="file" name="file" id="file" (change)="uploadSliderOne($event)">
+
+                        <!-------****************************--------->
+                        <div class="overlay text-center">
+                            <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-------****************************--------->
+                <div class="card-container">
+
+                    <div class="card image-wrapper">
+
+                        <!-------****************************--------->
+                        <div class="img-content" [class.none-img]="!sliderTwo">
+                            <img class="img-post" [src]="sliderTwo || '//:0'">
+                        </div>
+
+                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                        <input class="input-file" type="file" name="file" id="file" (change)="uploadSliderTwo($event)">
+
+                        <!-------****************************--------->
+                        <div class="overlay text-center">
+                            <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-------****************************--------->
+                <div class="card-container">
+
+                    <div class="card image-wrapper">
+
+                        <!-------****************************--------->
+                        <div class="img-content" [class.none-img]="!sliderThree">
+                            <img class="img-post" [src]="sliderThree || '//:0'">
+                        </div>
+
+                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                        <input class="input-file" type="file" name="file" id="file"
+                            (change)="uploadSliderThree($event)">
+
+                        <!-------****************************--------->
+                        <div class="overlay text-center">
+                            <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-------****************************--------->
+                <div class="card-container">
+                    <div class="card image-wrapper">
+
+                        <!-------****************************--------->
+                        <div class="img-content" [class.none-img]="!sliderFour">
+                            <img class="img-post" [src]="sliderFour || '//:0'">
+                        </div>
+
+                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                        <input class="input-file" type="file" name="file" id="file" (change)="uploadSliderFour($event)">
+
+                        <!-------****************************--------->
+                        <div class="overlay text-center">
+                            <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!---------------***** Slider Post *****----------------->
+
+            <!------------------- Excerpt Post ----------------------->
+            <div class="excerpt-wrapper card">
+                <div class="header-card text-uppercase">
+                    <div class="menu-icon" [inlineSVG]="'assets/img/graphics/edit_2.svg'"></div>
+                    <h3 class="txt-Sm">Extracto la entradas</h3>
+                </div>
+
+                <textarea [(ngModel)]="excerpt" #ctrl="ngModel" placeholder="Insertar extracto aquí..."></textarea>
+            </div>
+            <!---------------***** Excerpt Post *****----------------->
+
+            <!-- <button (click)="setUpdatePost()" [disabled]="!title || !content">{{ buttonText }}</button> -->
+
+            <!------------------- Btn Group Post ----------------------->
+            <div class="btn-group">
+
+                <!--****************************************-->
+                <div class="newone-btn close">
+
+                    <button class="btn-primary btn-update" (click)="setUpdatePost()">
+
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/done_mini.svg'"></div>
+                        <span class="btn-content">{{ updateBTN }}</span>
+
+                    </button>
+
+                </div>
+
+                <!--****************************************-->
+                <div class="newone-btn close">
+
+                    <button class="btn-acent btn-delete" (click)="setDelete()">
+
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/delete.svg'"></div>
+                        <span class="btn-content">{{ deleteBTN }}</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+            <!---------------***** Btn Group Post *****----------------->
+        </div>
+        <!---------------***** Post *****----------------->
+
+    </div>
+
+</div>
+<!---------------***** Dashboard *****----------------->

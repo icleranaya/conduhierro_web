@@ -1,0 +1,606 @@
+.portfolio {
+    display: flex;
+    width: $default-width;
+
+    .wrapper-section {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+
+        .row-section {
+            display: flex;
+
+            &.bg-section {
+                width: $default-width;
+                height: $default-width;
+                flex-flow: column nowrap;
+                justify-content: flex-start;
+
+                [class*="bg-section-"] {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-flow: column nowrap;
+                    height: $default-width / 2;
+
+                    &.grey-color {
+                        background: $grey-light;
+                        color: rgba($grey-second, 0.4);
+
+                        .primary-color {
+                            color: $primary-color;
+
+                            @include mediaLg {
+                                margin-bottom: $spacer-1;
+                            }
+
+
+                            @include mediaMd {
+                                top: 16%;
+                                letter-spacing: 1.5rem;
+                                text-align: center;
+                                position: absolute;
+                                width: 60%;
+                                z-index: 1;
+                            }
+
+
+                            @include mediaXSm {
+                                letter-spacing: 1.2rem;
+                                font-size: 2.75rem;
+                                width: 90%;
+                                line-height: 1;
+                            }
+
+
+                            @include mediaXXSm {
+                                letter-spacing: 0.75rem;
+                                top: 14%;
+                                font-size: 2.5rem;
+                            }
+
+
+                            @include mediaXXSm-large {
+                                top: 16%;
+                            }
+
+
+                            @include media-iphone-4 {
+                                font-size: 2rem;
+                            }
+                        }
+
+                        .txt-bg {
+                            line-height: .8;
+                            font-size: $spacer-6 * 5;
+
+                            @include mediaXL {
+                                font-size: $spacer-6 * 3;
+                            }
+
+
+                            @include mediaLg {
+                                font-size: $spacer-6 * 2.9;
+                                letter-spacing: $spacer-1;
+                            }
+
+
+                            @include mediaMd {
+                                text-align: center;
+                                letter-spacing: 35px;
+                                font-size: 10.5rem;
+                                line-height: 1;
+                                position: absolute;
+                                width: 500%;
+                                top: 15%;
+                            }
+
+
+                            @include mediaXSm {
+                                font-size: 10rem;
+                                line-height: 1.2;
+                                top: 9%;
+                            }
+
+
+                            @include mediaXSm-large {
+                                top: 11%;
+                            }
+
+
+                            @include mediaXXSm {
+                                top: 10%;
+                                font-size: 8rem;
+                            }
+
+
+                            @include mediaXXSm-large {
+                                top: 14%;
+                            }
+
+
+                            @include media-iphone-4 {
+                                top: 13%;
+                                font-size: 7rem;
+                                letter-spacing: 1.5rem;
+                                line-height: 1;
+                            }
+                        }
+                    }
+
+                    &.blue-color {
+                        bottom: 0;
+                        position: absolute;
+                        width: $default-width;
+                        height: $default-width / 2;
+                        background: $primary-color;
+                    }
+                }
+            }
+
+            &.wrapper-content {
+                top: 0;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+
+                .wrapper-slider {
+                    width: 100%;
+                    height: calc(100% / 3);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $white-default;
+
+                    @include mediaMd {
+                        height: 40%;
+                    }
+
+
+                    .swiper-container {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        margin: 0 auto;
+                        overflow: visible;
+                        justify-content: space-around;
+
+                        .swiper-wrapper {
+                            display: flex;
+                            align-items: center;
+
+                            @include mediaMd {
+                                align-items: flex-start;
+                            }
+
+
+                            > .swiper-slide {
+                                width: 25%;
+                                height: 170%;
+                                display: flex;
+                                cursor: pointer;
+                                padding: 0 1rem;
+                                position: relative;
+                                align-items: center;
+                                color: $primary-color;
+                                justify-content: center;
+                                flex-flow: column nowrap;
+
+                                @include mediaMd {
+                                    height: 125%;
+                                    padding: 17% 0;
+                                    width: 100% !important;
+                                    opacity: 0;
+                                    transition: .2s opacity ease-out;
+                                }
+
+
+                                @include mediaXSm {
+                                    padding: 28% 0 35% 0;
+                                    height: 130%;
+                                }
+
+
+                                @include mediaXSm-large {
+                                    padding: 30% 0 40% 0;
+                                }
+
+
+                                @include mediaXXSm {
+                                    padding: 26% 0 34.5% 0;
+                                }
+
+
+                                @include mediaXXSm-large {
+                                    padding: 27% 0 41% 0;
+                                }
+
+
+                                @include media-iphone-4 {
+                                    padding: 25% 0 28% 0;
+                                }
+
+                                .img-link {
+                                    width: 80%;
+                                    height: 60%;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    margin: auto;
+                                    z-index: 1000;
+                                    position: absolute;
+                                }
+
+
+                                &.swiper-slide-active {
+                                    opacity: 1 !important;
+                                }
+
+                                > .img-wrapper {
+                                    width: 80%;
+                                    max-height: 300px;
+                                    overflow: hidden;
+
+                                    @include mediaLg {
+                                        display: flex;
+                                        justify-content: center;
+                                    }
+
+                                    @include mediaMd {
+                                        width: 60%;
+                                    }
+
+                                    @include mediaXSm {
+                                        width: 75%;
+                                    }
+
+
+                                    img {
+                                        &.thumbnail {
+                                            height: auto;
+                                            width: $default-width;
+
+                                            @include mediaLg {
+                                                width: 85%;
+                                            }
+
+
+                                            @include mediaMd {
+                                                width: 100%;
+                                            }
+
+
+                                            @include media-iphone-4 {
+                                                width: 65%;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                h1 {
+                                    top: 11%;
+                                    width: 100%;
+                                    opacity: 0;
+                                    font-size: 2.25rem;
+                                    position: absolute;
+                                    text-align: center;
+                                    transition-duration: .2s;
+                                    transition-property: opacity, top;
+                                    transition-timing-function: ease-out;
+
+                                    @include mediaMd {
+                                        top: 2%;
+                                        opacity: 1;
+                                    }
+
+
+                                    @include mediaXSm {
+                                        font-size: 2rem;
+                                        width: 100%;
+                                        line-height: 1;
+                                    }
+
+
+                                    @include mediaXXSm {
+                                        font-size: 1.65rem;
+                                    }
+
+
+                                    @include media-iphone-4 {
+                                        font-size: 1.45rem;
+                                    }
+                                }
+
+                                h4 {
+                                    width: 100%;
+                                    opacity: 0;
+                                    bottom: 17%;
+                                    position: absolute;
+                                    text-align: center;
+                                    color: $white-default;
+                                    transition-duration: .2s;
+                                    transition-property: opacity, bottom;
+                                    transition-timing-function: ease-out;
+
+                                    @include mediaMd {
+                                        opacity: 1;
+                                        bottom: -15%;
+                                    }
+
+
+                                    @include mediaXSm {
+                                        width: 100%;
+                                        font-size: 1rem;
+                                        bottom: -19%;
+                                    }
+
+
+                                    @include mediaXXSm-large {
+                                        bottom: -18%;
+                                    }
+
+
+                                    @include media-iphone-4 {
+                                        font-size: 0.85rem;
+                                    }
+                                }
+
+                                > .btn {
+                                    opacity: 0;
+                                    bottom: 10%;
+                                    position: absolute;
+                                    transition-duration: .2s;
+                                    transition-property: opacity, bottom;
+                                    transition-timing-function: ease-out;
+
+                                    @include mediaMd {
+                                        opacity: 1;
+                                        bottom: 0;
+                                    }
+                                }
+
+                                &:hover {
+                                    h1 {
+                                        top: 5%;
+                                        opacity: 1;
+                                        transition-duration: .4s;
+                                        transition-property: opacity, top;
+                                        transition-timing-function: cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                                        @include mediaXL {
+                                            top: $default-width / 4 - ($default-width / 4 - 2);
+                                        }
+
+
+                                        @include mediaLg {
+                                            top: 0;
+                                        }
+                                    }
+
+                                    h4 {
+                                        opacity: 1;
+                                        bottom: 10.5%;
+                                        transition-duration: .4s;
+                                        transition-property: opacity, bottom;
+                                        transition-timing-function: cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                                        @include mediaXL {
+                                            bottom: 5%;
+                                        }
+                                    }
+
+                                    > .btn {
+                                        opacity: 1;
+                                        bottom: -1.5%;
+                                        transition-duration: .4s;
+                                        transition-property: opacity, bottom;
+                                        transition-timing-function: cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                                        @include mediaXL {
+                                            bottom: -10%;
+                                        }
+                                    }
+                                }
+
+                                .btn-full {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .btn-content {
+                                        @include mediaMd {
+                                            font-family: 'DINPro', sans-serif;
+                                            font-size: 1.5rem;
+                                        }
+
+
+                                        @include mediaXSm {
+                                            font-size: 1.25rem;
+                                        }
+
+
+                                        @include media-iphone-4 {
+                                            font-size: 1rem;
+                                        }
+
+
+                                        .content-figure {
+                                            width: 1.2rem;
+                                            height: 1.2rem;
+                                            margin-left: .5rem;
+                                            transform: rotate(180deg); //for left-arrow
+
+                                            @include mediaMd {
+                                                display: none;
+                                            }
+
+
+                                            svg {
+                                                path {
+                                                    fill: $white-primary;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .btn-right,
+                    .btn-left {
+                        opacity: 1;
+                        outline: none;
+                        cursor: pointer;
+                        position: inherit;
+                        background: $white-default;
+                        height: 100% !important;
+                        margin: 0 !important;
+                        width: $default-width / 4 - 20;
+                        z-index: 10000;
+
+                        @include mediaXL {
+                            width: $default-width / 4 - 20;
+                            height: $default-width / 4 - 2;
+                        }
+
+
+                        @include mediaLg {
+                            width: $default-width / 4 - 19;
+                            height: $default-width / 4 - 5;
+                        }
+
+
+                        @include mediaMd {
+                            width: $default-width / 4 - 16;
+                        }
+
+
+                        @include mediaXSm {
+                            width: 7rem;
+                        }
+
+
+                        @include mediaXXSm {
+                            width: 5.5rem;
+                        }
+
+
+                        @include media-iphone-4 {
+                            width: 3.5rem;
+                        }
+                    }
+
+                    .btn-left {
+                        > .content-figure {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transition: 0.4s transform cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                            svg {
+                                width: 2.5rem;
+                                height: auto;
+
+                                @include mediaXSm {
+                                    width: 2rem;
+                                }
+
+
+                                @include mediaXXSm {
+                                    width: 1.8rem;
+                                }
+
+
+                                @include media-iphone-4 {
+                                    width: 1.45rem;
+                                }
+
+
+                                path {
+                                    fill: $second-color;
+                                    transition: .3s fill;
+                                }
+                            }
+
+                            &:hover {
+                                transform: translateX(-7px);
+                                transition: 0.45s transform cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                                svg {
+                                    path {
+                                        fill: $default-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .btn-right {
+                        > .content-figure {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transform: rotate(180deg);
+                            transition: 0.4s transform cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                            svg {
+                                width: 2.5rem;
+                                height: auto;
+
+                                @include mediaXSm {
+                                    width: 2rem;
+                                }
+
+
+                                @include mediaXXSm {
+                                    width: 1.8rem;
+                                }
+
+
+                                @include media-iphone-4 {
+                                    width: 1.45rem;
+                                }
+
+
+                                path {
+                                    fill: $second-color;
+                                    transition: .3s fill;
+                                }
+                            }
+
+                            &:hover {
+                                transform: translateX(7px) rotate(180deg);
+                                transition: 0.45s transform cubic-bezier(0.05, 0.87, 0.82, 1.01);
+
+                                svg {
+                                    path {
+                                        fill: $default-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .create-items-hidden {
+                        display: none;
+                    }
+
+                    .swiper-button-disabled {
+                        opacity: .5 !important;
+                        cursor: auto !important;
+                    }
+                }
+            }
+        }
+    }
+}

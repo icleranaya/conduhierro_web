@@ -1,0 +1,880 @@
+.services {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+
+    .content-services {
+        display: flex;
+        height: 100vh;
+        flex-flow: row nowrap;
+        width: $default-width;
+        justify-content: flex-start;
+
+        @include mediaMd {
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+
+        .item-content {
+            display: flex;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+
+            @include mediaMd {
+                align-items: center;
+                width: 100%;
+
+                // justify-content: center;
+            }
+
+
+            .link-responsive {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: 0;
+                z-index: 10001;
+                display: none;
+                position: absolute;
+
+                @include mediaMd {
+                    display: block;
+                }
+            }
+
+            img {
+                &.bg-content,
+                &.bg-content-2,
+                &.bg-content-3 {
+                    position: absolute;
+                    transition: opacity .5s ease-in-out;
+                }
+
+                &.bg-content {
+                    opacity: 1;
+                }
+
+                &.bg-content-2 {
+                    opacity: 0;
+                    width: auto;
+                    right: -$default-width + 88;
+                    height: $default-width - 15;
+                    bottom: -$default-width + 95;
+
+                    @include mediaMd {
+                        display: none;
+                    }
+                }
+
+                &.bg-content-3 {
+                    bottom: 0;
+                    opacity: 0;
+                    width: auto;
+                    left: $default-width / -2 + 10;
+                    height: $default-width / 2 + 15;
+                }
+            }
+
+            &#section-1,
+            &#section-3 {
+                background: $primary-color;
+            }
+
+            //=======================================================================
+            //=======================================================================
+            //=======================================================================
+
+            &#section-1 {
+                flex: $default-width / 2 - 10;
+                transition: flex .3s ease-in-out;
+
+                .bg-content {
+                    width: 350%;
+                }
+
+                @include mediaMd {
+                    flex: 100%;
+                    height: 40%;
+
+                    .bg-content {
+                        top: -11rem;
+                        left: -25rem;
+                        width: 250%;
+                    }
+                }
+
+
+                .content-wrapper {
+                    .decoration-content {
+                        .content-hexagono {
+                            top: 0;
+                            right: 0;
+                            position: absolute;
+
+                            svg {
+                                width: $default-width - 10;
+                            }
+
+                            @include mediaMd {
+                                top: 6rem;
+                                right: 36rem;
+
+                                svg {
+                                    width: 86px;
+                                }
+                            }
+
+
+                            @include mediaXSm {
+                                top: 4rem;
+                                right: 18.5rem;
+
+                                svg {
+                                    width: 48px;
+                                }
+                            }
+
+
+                            @include mediaXXSm {
+                                right: 16rem;
+
+                                svg {
+                                    width: 36px;
+                                }
+                            }
+
+
+                            @include media-iphone-4 {
+                                top: 2rem;
+                                right: 15rem;
+
+                                svg {
+                                    width: 28px;
+                                }
+                            }
+                        }
+
+                        [class*="content-figure-"] {
+                            position: absolute;
+                            left: -$spacer-6;
+
+                            @include mediaMd {
+                                left: -9.5rem;
+                            }
+
+
+                            @include mediaXSm {
+                                left: -19.5rem;
+                            }
+
+
+                            @include media-iphone-4 {
+                                left: -21.5rem;
+                            }
+                        }
+
+                        .content-figure-1 {
+                            @include mediaMd {
+                                top: 9rem;
+                            }
+
+
+                            @include mediaXSm {
+                                top: 44%;
+                            }
+                        }
+
+                        .content-figure-2 {
+                            top: $spacer-1;
+
+                            @include mediaMd {
+                                top: 11rem;
+                            }
+
+
+                            @include mediaXSm {
+                                top: 52%;
+                            }
+                        }
+
+                        .content-figure-3 {
+                            top: $spacer-3;
+
+                            @include mediaMd {
+                                top: 13rem;
+                            }
+
+
+                            @include mediaXSm {
+                                top: 60%;
+                            }
+                        }
+                    }
+
+                    .text-content {
+                        h1 {
+                            margin-top: 4rem;
+                        }
+                    }
+                }
+
+                .decoration-item {
+                    .content-figure {
+                        @include mediaMd {
+                            display: none;
+                        }
+                    }
+                }
+
+                &:hover {
+                    flex: $default-width / 2 + 20;
+                    transition: flex .4s ease-in-out;
+
+                    img {
+                        &.bg-content,
+                        &.bg-content-2 {
+                            transition: opacity .4s ease-in-out;
+                        }
+
+                        &.bg-content {
+                            opacity: 0;
+                        }
+
+                        &.bg-content-2 {
+                            opacity: 1;
+                        }
+                    }
+
+                    .content-wrapper {
+                        width: $default-width - 26;
+                    }
+
+                    .decoration-item {
+                        .content-figure {
+                            svg {
+                                right: $default-width - 95;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //=======================================================================
+            //=======================================================================
+            //=======================================================================
+
+            &#section-2 {
+                background: $grey-light;
+                flex: $default-width - 75;
+                transition: flex .3s ease-in-out;
+
+                .bg-content {
+                    width: 350%;
+                }
+
+                @include mediaMd {
+                    flex: 100%;
+                    height: 30%;
+
+                    .bg-content-3 {
+                        display: none;
+                    }
+
+                    .bg-content {
+                        width: 500%;
+                        opacity: .5;
+                    }
+                }
+
+
+                &:hover {
+                    flex: $default-width / 2;
+                    transition: flex .4s ease-in-out;
+
+                    img {
+                        &.bg-content,
+                        &.bg-content-3 {
+                            transition: opacity .4s ease-in-out;
+                        }
+
+                        &.bg-content {
+                            opacity: 0;
+                        }
+
+                        &.bg-content-3 {
+                            opacity: 1;
+                        }
+                    }
+
+                    .decoration-item {
+                        .content-figure {
+                            svg {
+                                height: auto;
+                                width: $default-width / 4;
+                                right: -$default-width + 87;
+                                margin-bottom: $spacer-3 + 1;
+                                transition-duration: .4s;
+                                transition-property: height, width, right, margin-bottom;
+                                transition-timing-function: ease-in-out;
+                            }
+                        }
+                    }
+                }
+
+                .content-wrapper {
+                    position: relative;
+                    justify-content: center;
+
+                    .text-content {
+                        color: $primary-color;
+                        margin-right: $spacer-0;
+                    }
+
+                    .decoration-content {
+                        display: flex;
+                        position: absolute;
+                        top: $spacer-6 * -2.5;
+                        right: $spacer-6 * -10;
+                        flex-flow: column nowrap;
+                        justify-content: flex-start;
+                        height: $default-width / 1.5;
+
+                        @include mediaMd {
+                            top: -12rem;
+                            right: -46rem;
+                        }
+
+
+                        @include mediaXSm {
+                            display: none;
+                        }
+                    }
+                }
+
+                .decoration-item {
+                    color: rgba($white-default, 0.2);
+
+                    .din {
+                        @include mediaMd {
+                            top: -25rem;
+                            left: -24rem;
+                        }
+
+
+                        @include mediaXSm {
+                            top: -17.5rem;
+                            left: -10rem;
+                        }
+                    }
+
+                    .content-figure {
+                        svg {
+                            height: auto;
+                            top: $default-width - 36;
+                            width: $default-width - 46;
+                            right: -$default-width + 70;
+                            margin-bottom: $spacer-3 + 1;
+                            transition-duration: .3s;
+                            transition-property: height, width, right, margin-bottom;
+                            transition-timing-function: ease-in-out;
+
+                            #hexagono_outline_red {
+                                stroke: $default-color;
+                                stroke-width: 5;
+                            }
+
+                            @include mediaMd {
+                                display: none;
+                            }
+
+
+                            @include mediaXSm {
+                                display: block;
+                                top: -75%;
+                                width: 5.5rem;
+                                right: 0%;
+                                margin: 0;
+                            }
+
+
+                            @include mediaXXSm {
+                                top: -90%;
+                                width: 4rem;
+                                right: 9%;
+                            }
+
+
+                            @include media-iphone-4 {
+                                top: -100%;
+                                width: 3.5rem;
+                                right: 14%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //=======================================================================
+            //=======================================================================
+            //=======================================================================
+
+            &#section-3 {
+                flex: $default-width / 2 - 10;
+                transition: flex .3s ease-in-out;
+
+                @include mediaMd {
+                    flex: 100%;
+                    height: 30%;
+                }
+
+
+                .bg-content {
+                    width: 350%;
+
+                    @include mediaMd {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                    }
+
+
+                    @include mediaXSm-large {
+                        width: 120%;
+                    }
+                }
+
+                &:hover {
+                    flex: $default-width / 2 + 20;
+                    transition: flex .4s ease-in-out;
+
+                    .content-wrapper {
+                        left: $default-width / 4;
+                        transition: left .4s ease-in-out;
+
+                        .decoration-img-2 {
+                            opacity: 1;
+                            transition: opacity .4s ease-in-out;
+                        }
+
+                        .text-content {
+                            margin-left: $spacer-0;
+                            transition: margin-left .4s ease-in-out;
+                        }
+
+                        .decoration-content {
+                            .content-figure {
+                                position: absolute;
+                                left: $default-width / 2 - 5;
+                                transition: left .4s ease-in-out;
+                            }
+
+                            .content-figure-2 {
+                                left: $spacer-2;
+                                transition: left .4s ease-in-out;
+                            }
+                        }
+                    }
+
+                    .decoration-item {
+                        .wrapper-elements {
+                            > img {
+                                &.decoration-img {
+                                    opacity: 0;
+                                    transition: opacity .4s ease-in-out;
+                                }
+                            }
+
+                            > .wrapper-figures {
+                                position: relative;
+                                width: $default-width / 2;
+
+                                [class*="content-figure-"] {
+                                    position: absolute;
+                                    top: -$spacer-6 * 4;
+                                    left: $default-width / 8;
+                                    transition-duration: .4s;
+                                    transition-property: top, left;
+                                    transition-timing-function: ease-in-out;
+
+                                    svg {
+                                        width: $spacer-6 * 20;
+                                    }
+                                }
+
+                                .content-figure-2 {
+                                    top: -$spacer-6 * 3.2;
+                                }
+
+                                .content-figure-3 {
+                                    top: -$spacer-6 * 2.6;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .content-wrapper {
+                    left: 0;
+                    position: relative;
+                    justify-content: flex-start;
+                    transition: left .3s ease-in-out;
+
+                    @include mediaMd {
+                        justify-content: center;
+                    }
+
+
+                    .decoration-img-2 {
+                        opacity: 0;
+                        z-index: 1;
+                        height: auto;
+                        position: absolute;
+                        top: $default-width / 2 - 30;
+                        left: $default-width / -2 + 5;
+                        width: $default-width / 2 + 10;
+                        transition: opacity .3s ease-in-out;
+                    }
+
+                    .text-content {
+                        margin-left: $spacer-4;
+                        margin-right: $spacer-0;
+                        transition: margin-left .3s ease-in-out;
+
+                        @include mediaMd {
+                            margin-left: 0;
+                            margin-bottom: 4rem;
+                        }
+
+
+                        @include mediaXSm {
+                            margin-bottom: 3rem;
+                        }
+                    }
+
+                    .decoration-content {
+                        left: 0;
+                        position: absolute;
+                        height: $default-width;
+
+                        @include mediaMd {
+                            display: none;
+                        }
+
+
+                        .content-figure {
+                            position: absolute;
+                            left: $default-width / 2 + 5;
+                            transition: left .3s ease-in-out;
+
+                            svg {
+                                height: auto;
+                                width: $default-width / 2 + 10;
+                            }
+                        }
+
+                        .content-figure-2 {
+                            left: 0;
+                            transition: left .3s ease-in-out;
+
+                            svg {
+                                height: auto;
+                                width: $default-width - 14;
+                            }
+                        }
+                    }
+                }
+
+                .decoration-item {
+                    .wrapper-elements {
+                        display: flex;
+                        align-items: center;
+                        flex-flow: row nowrap;
+                        justify-content: flex-start;
+
+                        > img {
+                            &.decoration-img {
+                                opacity: 1;
+                                height: auto;
+                                left: -$spacer-6;
+                                bottom: $spacer-1;
+                                position: absolute;
+                                width: $default-width / 1.8;
+                                transition: opacity .3s ease-in-out;
+
+                                @include mediaMd {
+                                    width: 16rem;
+                                    bottom: -7rem;
+                                    left: -9rem;
+                                    transform: rotate(-30deg);
+                                }
+
+
+                                @include mediaXSm {
+                                    width: 13rem;
+                                    bottom: -6.5rem;
+                                    left: -8.5rem;
+                                }
+
+
+                                @include mediaXXSm {
+                                    width: 11rem;
+                                    bottom: -5rem;
+                                    left: -7.5rem;
+                                }
+
+
+                                @include media-iphone-4 {
+                                    width: 10rem;
+                                    bottom: -4.5rem;
+                                    left: -6.5rem;
+                                }
+                            }
+                        }
+
+                        > .wrapper-figures {
+                            position: relative;
+                            width: $default-width / 2;
+
+                            @include mediaMd {
+                                display: none;
+                            }
+
+
+                            [class*="content-figure-"] {
+                                position: absolute;
+                                top: -$spacer-6 * 6;
+                                left: $default-width / -10;
+                                transition-duration: .3s;
+                                transition-property: top, left;
+                                transition-timing-function: ease-in-out;
+
+                                svg {
+                                    width: $spacer-6 * 20;
+                                }
+                            }
+
+                            .content-figure-2 {
+                                top: -$spacer-6 * 5.25;
+                            }
+
+                            .content-figure-3 {
+                                top: -$spacer-6 * 4.7;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //=======================================================================
+            //=======================================================================
+            //=======================================================================
+
+            .content-wrapper {
+                display: flex;
+                align-items: center;
+                flex-flow: row nowrap;
+                width: $default-width;
+                justify-content: flex-end;
+                height: $default-width / 2;
+                transition: width .3s ease-in-out;
+
+                @include mediaMd {
+                    height: 100%;
+                    justify-content: center;
+                    padding: 0 7rem;
+                }
+
+
+                .decoration-content {
+                    position: relative;
+                    width: $default-width;
+                    height: $default-width - 10;
+
+                    @include mediaMd {
+                        position: absolute;
+                    }
+
+
+                    .content-hexagono {
+                        top: 0;
+                        right: 0;
+                        position: absolute;
+
+                        svg {
+                            width: $default-width - 10;
+                        }
+
+                        @include mediaMd {
+                            top: 6rem;
+                            right: 36rem;
+
+                            svg {
+                                width: 86px;
+                            }
+                        }
+
+
+                        @include mediaXSm {
+                            top: 4rem;
+                            right: 18.5rem;
+
+                            svg {
+                                width: 48px;
+                            }
+                        }
+                    }
+
+                    [class*="content-figure-"] {
+                        position: absolute;
+                        left: -$spacer-6;
+
+                        @include mediaMd {
+                            left: -12rem;
+                        }
+
+
+                        @include mediaXSm {
+                            left: -19.5rem;
+                        }
+                    }
+
+                    .content-figure-1 {
+                        @include mediaMd {
+                            top: 6rem;
+                        }
+
+
+                        @include mediaXSm {
+                            top: 7rem;
+                        }
+                    }
+
+                    .content-figure-2 {
+                        top: $spacer-1;
+
+                        @include mediaMd {
+                            top: 8rem;
+                        }
+
+
+                        @include mediaXSm {
+                            top: 8.5rem;
+                        }
+                    }
+
+                    .content-figure-3 {
+                        top: $spacer-3;
+
+                        @include mediaMd {
+                            top: 10rem;
+                        }
+
+
+                        @include mediaXSm {
+                            top: 10rem;
+                        }
+                    }
+                }
+
+                .text-content {
+                    display: flex;
+                    z-index: 1000;
+                    align-items: center;
+                    color: $white-default;
+                    margin-top: $spacer-3;
+                    justify-content: center;
+                    flex-flow: column nowrap;
+                    width: $default-width / 2;
+                    margin-right: $spacer-6 * 2.74;
+
+                    @include mediaMd {
+                        margin: 0;
+
+                        .btn {
+                            display: none;
+                        }
+                    }
+
+
+                    h1 {
+                        margin-bottom: $spacer-6;
+
+                        @include mediaMd {
+                            margin-bottom: 0;
+                        }
+
+
+                        @include mediaXSm {
+                            font-size: 2.125rem;
+                            line-height: 1.25;
+                        }
+
+
+                        @include media-iphone-4 {
+                            font-size: 1.75rem;
+                            line-height: 1.25;
+                        }
+                    }
+                }
+            }
+        }
+
+        .decoration-item {
+            z-index: 1000;
+            height: $default-width / 3.1;
+            color: rgba($white-default, 0.05);
+
+            @include mediaMd {
+                position: absolute;
+            }
+
+
+            h1 {
+                z-index: 10000;
+                position: relative;
+                width: $spacer-6 * 28;
+                font-size: $spacer-6 * 3.1;
+                margin-left: -$spacer-6 * 2;
+
+                @include mediaMd {
+                    margin: 0;
+                    width: auto;
+                    position: absolute;
+                    top: -26rem;
+                    left: -26rem;
+                    font-size: 17rem;
+                }
+
+
+                @include mediaXSm {
+                    top: -18rem;
+                    line-height: 1.4;
+                    left: -16rem;
+                    font-size: 10rem;
+                }
+            }
+
+            .content-figure {
+                width: $spacer-3 * 12 + 6;
+                height: $default-width / 1.5;
+
+                svg {
+                    position: absolute;
+                    top: $default-width - 23;
+                    right: $default-width / -4;
+                    width: $default-width - 23;
+                    height: $default-width - 40;
+                    transition: right .3s ease-in-out;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,340 @@
+.contact {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    color: $white-default;
+    justify-content: center;
+    background: $primary-color;
+
+    @include mediaMd {
+        background: transparent;
+    }
+
+
+    .decoration-content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        @include mediaMd {
+            visibility: hidden;
+            display: none;
+        }
+
+
+        .content-hexagono {
+            position: absolute;
+            right: -11.5rem;
+            bottom: -24rem;
+
+            @include mediaXL {
+                bottom: -18rem;
+                right: -7rem;
+            }
+
+
+            @include mediaLg {
+                right: -9rem;
+                bottom: -17rem;
+            }
+
+
+            svg {
+                width: 26vw;
+                height: auto;
+                min-width: 360px;
+                max-width: 650px;
+            }
+        }
+
+        .content-figure-1 {
+            left: -8rem;
+            bottom: 2rem;
+            position: absolute;
+
+            @include mediaXL {
+                left: -12.5rem;
+            }
+
+
+            @include mediaLg {
+                left: -14.5rem;
+                bottom: 0;
+            }
+
+
+            svg {
+                g {
+                    stroke: #2259c1;
+                }
+            }
+        }
+
+        .content-figure-2 {
+            left: -15rem;
+            bottom: -4.25rem;
+            position: absolute;
+
+            @include mediaXL {
+                left: -23.5rem;
+                bottom: -6.5rem;
+            }
+
+
+            @include mediaLg {
+                left: -26.5rem;
+                bottom: -9.5rem;
+            }
+        }
+
+        .content-figure-3 {
+            left: -8rem;
+            bottom: -3.5rem;
+            position: absolute;
+
+            @include mediaXL {
+                left: -12.5rem;
+            }
+
+
+            @include mediaLg {
+                bottom: -5.5rem;
+                left: -14.5rem;
+            }
+
+
+            svg {
+                g {
+                    stroke: #2259c1;
+                }
+            }
+        }
+    }
+
+    .content-contact {
+        width: 54%;
+        height: calc(100%);
+        background: $second-color;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+
+        @include mediaMd {
+            width: 100%;
+            background: transparent;
+        }
+
+
+        .content-wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 20vh 27% 8vh 27%;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+            @include mediaLg {
+                padding: 12vh 25% 8vh 25%;
+            }
+
+
+            @include mediaSm {
+                padding: 20vh 15% 5vh 15%;
+            }
+
+
+            @include mediaSm {
+                padding: 20vh 10% 5vh 10%;
+            }
+
+
+            @include media-iphone-4 {
+                padding: 18vh 10% 5vh 10%;
+            }
+
+
+            .text-content {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: space-between;
+
+                .contact-title {
+                    margin-bottom: 2rem;
+
+                    @include mediaXXSm {
+                        margin-bottom: 1.5rem;
+                    }
+                }
+
+                .generic-txt {
+                    margin-bottom: 2rem;
+
+                    @include mediaXXSm {
+                        margin-bottom: 1rem;
+                    }
+
+
+                    @include media-iphone-4 {
+                        margin-bottom: .8rem;
+                    }
+                }
+
+                .contact-buttons {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                    width: 70%;
+                    max-width: 360px;
+
+                    .contact-link {
+                        font-weight: 600;
+                        padding: 0 18px;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .phone-icon {
+                            margin-right: 1rem;
+
+                            svg {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+
+                    .whatsapp-btn-container {
+                        margin-top: 1rem;
+                        width: 100%;
+
+                        @include media-iphone-4 {
+                            margin-top: .5rem;
+                        }
+
+
+                        .whatsapp-btn {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            .whatsapp-icon {
+                                margin-right: .9rem;
+
+                                @include mediaXXSm {
+                                    margin-right: .5rem;
+                                }
+
+
+                                svg {
+                                    width: 1.2rem;
+                                    height: auto;
+
+                                    @include mediaMd {
+                                        width: 1rem;
+                                    }
+
+
+                                    @include media-iphone-4 {
+                                        width: .8rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .h-line {
+                    margin-top: 3rem;
+                    flex: none;
+                    width: 70%;
+
+                    @include mediaXXSm {
+                        margin-top: 1.5rem;
+                    }
+                }
+
+                .contact-email {
+                    margin-bottom: 3rem;
+
+                    @include mediaXXSm {
+                        margin-bottom: 1rem;
+                    }
+
+
+                    .email {
+                        letter-spacing: 0.5px;
+                    }
+
+                    .generic-txt {
+                        margin-bottom: 1.5rem;
+
+                        @include media-iphone-4 {
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+
+                .info {
+                    font-weight: 600;
+                    margin-bottom: 3rem;
+
+                    @include mediaXXSm {
+                        margin-bottom: 1.5rem;
+                    }
+
+
+                    @include media-iphone-4 {
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                .instagram-btn {
+                    display: flex;
+                    align-items: center;
+                    transition: .3s color ease-in;
+
+                    :nth-child(1) {
+                        margin-right: .3rem;
+                    }
+
+                    .instagram-link {
+                        font-weight: 600;
+                        font-size: 14px;
+                        letter-spacing: .5px;
+
+                        @include mediaXSm {
+                            font-size: 14px;
+                            line-height: 1rem;
+                        }
+                    }
+
+                    .instagram-icon {
+                        svg {
+                            width: 2rem;
+                            height: 2rem;
+
+                            @include mediaLg {
+                                width: 1.4rem;
+                                height: 1.4rem;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        color: #ff002d;
+                        transition: .3s color ease-out;
+                    }
+                }
+            }
+        }
+    }
+}

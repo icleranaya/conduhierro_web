@@ -1,0 +1,50 @@
+<!------------------- Navbar ----------------------->
+<app-navbar></app-navbar>
+<!---------------***** Navabr *****----------------->
+
+<!------------------- Dashboard ----------------------->
+<main class="dashboard">
+
+    <!------------------- Google ----------------------->
+    <div class="google-analitycs"></div>
+    <!---------------***** Google *****----------------->
+
+
+    <!------------------- Items ----------------------->
+    <div class="wrapper-items card">
+
+        <div class="header-section text-uppercase">
+            <div class="menu-icon" [inlineSVG]="'assets/img/graphics/edit_cover.svg'"></div>
+            <h3 class="txt-Sm">Todas las entradas</h3>
+        </div>
+
+        <!-------****************************--------->
+        <div class="item" *ngFor="let post of posts | async">
+
+            <!-------****************************--------->
+            <a class="content-item link-item" routerLink="/portfolio/{{ post.id }}">
+                {{ post.title }}
+            </a>
+
+            <!-------****************************--------->
+            <div class="content-item excerpt">
+                {{ post.excerpt }}
+            </div>
+
+            <!-------****************************--------->
+            <div class="content-item options-item">
+                <a href="javascript:;">
+                    <div class="menu-icon" [inlineSVG]="'assets/img/graphics/edit.svg'"></div>
+                </a>
+                <a href="javascript:;">
+                    <div class="menu-icon" [inlineSVG]="'assets/img/graphics/delete.svg'"></div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <!---------------***** Items *****----------------->
+
+</main>
+<!---------------***** Dashboard *****----------------->

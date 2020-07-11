@@ -1,0 +1,84 @@
+<!------------------- Dashboard ----------------------->
+<div class="dashboard">
+
+    <div class="content">
+
+        <!-------****************************--------->
+        <div class="bg-4"></div>
+
+        <!------------------- Post ----------------------->
+        <div class="wrapper-post">
+
+            <!------------------- Header Post ----------------------->
+            <div class="header-post">
+
+                <!-------****************************--------->
+                <div class="image-wrapper read" [class.img-background]="thumbnail">
+                    <div class="img-content" [class.none-img]="!thumbnail">
+                        <img class="img-post" [src]="thumbnail || '//:0'">
+                    </div>
+
+                    <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+                </div>
+
+                <div class="title-wrapper">
+                    <h1>{{ title }}</h1>
+                </div>
+            </div>
+
+            <!------------------- Content Post ----------------------->
+            <div class="content-post card p-2" [innerHTML]="content"></div>
+            <!---------------***** Content Post *****----------------->
+
+            <!------------------- Slider Post ----------------------->
+            <div class="img-slider-wrapper" *ngIf="isSlider">
+
+                <!-------****************************--------->
+                <div class="card-container" *ngFor="let slide of slider">
+
+                    <!-------****************************--------->
+
+                    <div class="card image-wrapper read">
+
+
+                        <div class="img-content" [class.none-img]="!slide">
+                            <img class="img-post" [src]="slide || '//:0'">
+                        </div>
+
+                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                    </div>
+
+                    <!-------****************************--------->
+
+                </div>
+                <!-------****************************--------->
+
+
+            </div>
+            <!---------------***** Slider Post *****-----------------> 
+            
+
+            <!------------------- Btn Group Post ----------------------->
+            <div class="btn-group">
+                <div class="newone-btn close">
+                    <button class="btn-primary btn-edit" (click)="setUpdate()">
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/edit.svg'"></div>
+                        <span class="btn-content">{{ editBTN }}</span>
+                    </button>
+                </div>
+                <div class="newone-btn close">
+                    <button class="btn-acent btn-delete" (click)="setDelete()">
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/delete.svg'"></div>
+                        <span class="btn-content">{{ deleteBTN }}</span>
+                    </button>
+                </div>
+            </div>
+            <!---------------***** Btn Group Post *****----------------->
+
+        </div>
+
+    </div>
+
+</div>
+<!---------------***** Dashboard *****----------------->

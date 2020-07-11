@@ -1,0 +1,52 @@
+<!------------------- Header ----------------------->
+<header class="wrapper-sidebar">
+
+    <!-------****************************--------->
+    <div class="header-sidebar">
+        <a class="link-logo" href="https://prismaagencia.com" target="_blank">
+            <span>NewOne</span>
+        </a>    
+    </div>
+
+    <!-------****************************--------->
+    <div class="wrapper-navbar">
+
+        <!------------------- Menu ----------------------->
+        <nav class="adm-navbar">
+
+            <!-------****************************--------->
+            <ul class="adm-nav">
+
+                <!-------****************************--------->
+                <li class="nav-item">
+                    <a class="link-item active" routerLink="/dashboard">
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/grid_system.svg'"></div>
+                        <span>Escritorio</span>
+                    </a>
+                </li>
+
+                <!-- Posts Link-->
+                <li class="nav-item">
+                    <a class="link-item" routerLink="/dashboard/create-post">
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/edit_cover.svg'"></div>
+                        <span>Crear Entrada</span>
+                    </a>
+                </li>
+                <!-- /End Posts Link -->
+
+                <li *ngIf="auth.isLoggedIn" class="nav-item">
+                    <a class="link-item"  (click)="auth.logout()">
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/shut_down.svg'"></div>
+                        <span>Cerrar sesión</span>
+                    </a>
+                </li>
+
+            </ul>
+        
+        </nav>
+        <!---------------***** Menu *****----------------->
+
+    </div>
+
+</header>
+<!---------------***** Header *****----------------->

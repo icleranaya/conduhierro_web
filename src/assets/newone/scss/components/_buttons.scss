@@ -1,0 +1,44 @@
+.newone-btn {
+    transition-duration: .15s;
+    transition-property: width;
+    transition-timing-function: ease;
+
+    .btn {
+        color: $second;
+
+        @include btn-admin($btn-default, $btn-hover-default);
+    }
+
+    .btn-primary {
+        color: $white-default;
+
+        @include btn-admin($btn-primary, $btn-hover-primary);
+    }
+
+    .btn-acent {
+        color: $white-default;
+
+        @include btn-admin($btn-acent, $btn-hover-acent);
+    }
+
+    .btn-warning {
+        color: $white-default;
+
+        @include btn-admin($btn-warning, $btn-hover-warning);
+    }
+
+    .btn-succes {
+        color: $white-default;
+
+        @include btn-admin($btn-succes, $btn-hover-succes);
+    }
+
+    .btn-outline-warning {
+        color: $second;
+        font-weight: 500;
+
+        @include btn-outline-admin(140px, $border-radius_3, 18px, $btn-warning, $third);
+    }
+
+    @include btn-close;
+}

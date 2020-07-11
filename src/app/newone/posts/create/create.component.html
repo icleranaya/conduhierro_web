@@ -12,170 +12,166 @@
             <!------------------- Header Form ----------------------->
             <div class="header-post">
 
+                <!-------****************************--------->
+                <div class="image-wrapper">
+                    <div class="img-content" [class.none-img]="!image">
+                        <img class="img-post" [src]="image || '//:0'">
+                    </div>
+
+                    <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                    <input class="input-file" type="file" name="file" id="file" (change)="uploadImage($event)">
+
                     <!-------****************************--------->
-                    <div class="image-wrapper">
-                        <div class="img-content" [class.none-img]="!image">
-                            <img class="img-post" [src]="image || '//:0'">
-                        </div>
+                    <div class="overlay">
+                        <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
+                    </div>
 
-                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+                </div>
 
-                        <input class="input-file" type="file" name="file" id="file" (change)="uploadImage($event)">
+                <!-------****************************--------->
+                <div class="title-wrapper">
+                    <label for="title" class="input-container">
+                        <input type="text" [(ngModel)]="title" #ctrl="ngModel">
+                        <span class="label">Título de la entrada</span>
+                        <span class="border"></span>
+                    </label>
+                </div>
+
+            </div>
+
+            <!---------------***** Header Form *****----------------->
+
+            <!------------------- Editor Form ----------------------->
+            <div class="editor-wrapper card">
+                <quill-editor [(ngModel)]="content" #ctrl="ngModel" [modules]="config"></quill-editor>
+            </div>
+            <!---------------***** Editor Form *****----------------->
+
+            <!------------------- Slider Post ----------------------->
+            <div class="img-slider-wrapper">
+
+                <!-------****************************--------->
+
+                <div class="card-container">
+
+                    <div class="card image-wrapper">
 
                         <!-------****************************--------->
-                        <div class="overlay">
+                        <div class="img-content" [class.none-img]="!sliderOne">
+                            <img class="img-post" [src]="sliderOne || '//:0'">
+                        </div>
+                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                        <input class="input-file" type="file" name="file" id="file" (change)="uploadSliderOne($event)">
+
+                        <!-------****************************--------->
+                        <div class="overlay text-center">
                             <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
                         </div>
 
                     </div>
 
-                    <!-------****************************--------->
-                    <div class="title-wrapper">
-                        <label for="title" class="input-container">
-                            <input type="text" [(ngModel)]="title" #ctrl="ngModel">
-                            <span class="label">Título de la entrada</span>
-                            <span class="border"></span>
-                        </label>
-                    </div>
-
                 </div>
 
-                <!---------------***** Header Form *****----------------->
+                <!-------****************************--------->
+                <div class="card-container">
 
-                <!------------------- Editor Form ----------------------->
-                <div class="editor-wrapper card">
-                    <quill-editor [(ngModel)]="content" #ctrl="ngModel" [modules]="config"></quill-editor>
-                </div>
-                <!---------------***** Editor Form *****----------------->
+                    <div class="card image-wrapper">
 
-                <!------------------- Slider Post ----------------------->
-                <div class="img-slider-wrapper">
-
-                    <!-------****************************--------->
-
-                    <div class="card-container">
-
-                        <div class="card image-wrapper">
-
-                            <!-------****************************--------->
-                            <div class="img-content" [class.none-img]="!sliderOne">
-                                <img class="img-post" [src]="sliderOne || '//:0'">
-                            </div>
-                            <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
-
-                            <input class="input-file" type="file" name="file" id="file"
-                                (change)="uploadSliderOne($event)">
-
-                            <!-------****************************--------->
-                            <div class="overlay text-center">
-                                <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
-                            </div>
-
+                        <!-------****************************--------->
+                        <div class="img-content" [class.none-img]="!sliderOne">
+                            <img class="img-post" [src]="sliderOne || '//:0'">
                         </div>
+                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
 
-                    </div>
+                        <input class="input-file" type="file" name="file" id="file" (change)="uploadSliderOne($event)">
 
-                    <!-------****************************--------->
-                    <div class="card-container">
-
-                        <div class="card image-wrapper">
-
-                            <!-------****************************--------->
-                            <div class="img-content" [class.none-img]="!sliderOne">
-                                <img class="img-post" [src]="sliderOne || '//:0'">
-                            </div>
-                            <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
-
-                            <input class="input-file" type="file" name="file" id="file"
-                                (change)="uploadSliderOne($event)">
-
-                            <!-------****************************--------->
-                            <div class="overlay text-center">
-                                <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-------****************************--------->
-                    <div class="card-container">
-
-                        <div class="card image-wrapper">
-
-                            <!-------****************************--------->
-                            <div class="img-content" [class.none-img]="!sliderOne">
-                                <img class="img-post" [src]="sliderOne || '//:0'">
-                            </div>
-                            <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
-
-                            <input class="input-file" type="file" name="file" id="file"
-                                (change)="uploadSliderOne($event)">
-
-                            <!-------****************************--------->
-                            <div class="overlay text-center">
-                                <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-------****************************--------->
-                    <div class="card-container">
-
-                        <div class="card image-wrapper">
-
-                            <!-------****************************--------->
-                            <div class="img-content" [class.none-img]="!sliderOne">
-                                <img class="img-post" [src]="sliderOne || '//:0'">
-                            </div>
-                            <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
-
-                            <input class="input-file" type="file" name="file" id="file"
-                                (change)="uploadSliderOne($event)">
-
-                            <!-------****************************--------->
-                            <div class="overlay text-center">
-                                <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
-                            </div>
-
+                        <!-------****************************--------->
+                        <div class="overlay text-center">
+                            <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
                         </div>
 
                     </div>
 
                 </div>
-                <!---------------***** Slider Post *****----------------->
+                <!-------****************************--------->
+                <div class="card-container">
 
-                <!------------------- Excerpt Post ----------------------->
-                <div class="excerpt-wrapper card">
-                    <div class="header-card text-uppercase">
-                        <h3 class="txt-Sm">Extracto de la entrada</h3>
+                    <div class="card image-wrapper">
+
+                        <!-------****************************--------->
+                        <div class="img-content" [class.none-img]="!sliderOne">
+                            <img class="img-post" [src]="sliderOne || '//:0'">
+                        </div>
+                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                        <input class="input-file" type="file" name="file" id="file" (change)="uploadSliderOne($event)">
+
+                        <!-------****************************--------->
+                        <div class="overlay text-center">
+                            <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
+                        </div>
+
                     </div>
 
-                    <textarea [(ngModel)]="excerpt" #ctrl="ngModel" placeholder="Insertar extracto aquí ..."></textarea>
                 </div>
-                <!---------------***** Excerpt Post *****----------------->
+                <!-------****************************--------->
+                <div class="card-container">
 
-                <!------------------- Btn Group Post ----------------------->
-                <div class="btn-group">
-                    <div class="newone-btn close">
-                        <button class="btn-primary btn-sumbit" (click)="createPost()">
-                            <div class="menu-icon" [inlineSVG]="'assets/img/graphics/done_mini.svg'"></div>
-                            <span class="btn-content">{{ publishedBTN }}</span>
-                        </button>
+                    <div class="card image-wrapper">
+
+                        <!-------****************************--------->
+                        <div class="img-content" [class.none-img]="!sliderOne">
+                            <img class="img-post" [src]="sliderOne || '//:0'">
+                        </div>
+                        <div class="img-icon" [inlineSVG]="'assets/img/graphics/image_picture.svg'"></div>
+
+                        <input class="input-file" type="file" name="file" id="file" (change)="uploadSliderOne($event)">
+
+                        <!-------****************************--------->
+                        <div class="overlay text-center">
+                            <div class="signo" [inlineSVG]="'assets/img/graphics/plus.svg'"></div>
+                        </div>
+
                     </div>
-                    <div class="newone-btn close">
-                        <button class="btn-acent btn-save" (click)="savePost()">
-                            <div class="menu-icon" [inlineSVG]="'assets/img/graphics/save.svg'"></div>
-                            <span class="btn-content">{{ saveBTN }}</span>
-                        </button>
-                    </div>
+
                 </div>
-                <!---------------***** Btn Group Post *****----------------->
 
             </div>
-            <!---------------***** Form *****----------------->
+            <!---------------***** Slider Post *****----------------->
+
+            <!------------------- Excerpt Post ----------------------->
+            <div class="excerpt-wrapper card">
+                <div class="header-card text-uppercase">
+                    <h3 class="txt-Sm">Extracto de la entrada</h3>
+                </div>
+
+                <textarea [(ngModel)]="excerpt" #ctrl="ngModel" placeholder="Insertar extracto aquí ..."></textarea>
+            </div>
+            <!---------------***** Excerpt Post *****----------------->
+
+            <!------------------- Btn Group Post ----------------------->
+            <div class="btn-group">
+                <div class="newone-btn close">
+                    <button class="btn-primary btn-sumbit" (click)="createPost()">
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/done_mini.svg'"></div>
+                        <span class="btn-content">{{ publishedBTN }}</span>
+                    </button>
+                </div>
+                <div class="newone-btn close">
+                    <button class="btn-acent btn-save" (click)="savePost()">
+                        <div class="menu-icon" [inlineSVG]="'assets/img/graphics/save.svg'"></div>
+                        <span class="btn-content">{{ saveBTN }}</span>
+                    </button>
+                </div>
+            </div>
+            <!---------------***** Btn Group Post *****----------------->
 
         </div>
+        <!---------------***** Form *****----------------->
 
     </div>
-    <!---------------***** Dashboard *****----------------->
+
+</div>
+<!---------------***** Dashboard *****----------------->

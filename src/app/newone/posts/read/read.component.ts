@@ -1,96 +1,86 @@
-import { Component, OnInit }  from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // Routers
-import {
-  Router,
-  ActivatedRoute }            from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 // Services
-import { PostService }        from '../post.service';
-import { AuthService }        from '../../core/auth.service';
+import { PostService } from '../post.service';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
-  selector: 'app-read',
-  templateUrl: './read.component.html'
+	selector: 'app-read',
+	templateUrl: './read.component.html'
 })
 export class ReadComponent implements OnInit {
+	// ======================================
+	//              Post Variables
+	// ======================================
+	public title: string;
+	public content: string;
+	public excerpt: string;
+	public thumbnail: string;
+	public id: string;
+	public slider: Array<string>;
+	public isSlider: boolean = false;
+	public editBTN: string = 'Editar';
+	public deleteBTN: string = 'Borrar';
 
-  // ======================================
-  //              Post Variables
-  // ======================================
-  public title      : string;
-  public content    : string;
-  public excerpt    : string;
-  public thumbnail  : string;
-  public id         : string;
-  public slider     : Array<string>;
-  public isSlider   : boolean = false;
-  public editBTN    : string = "Editar";
-  public deleteBTN  : string = "Borrar";
+	// ======================================
+	//              Constructor
+	// ======================================
+	constructor(
+		private route: ActivatedRoute,
+		private router: Router,
+		private auth: AuthService,
+		private postService: PostService
+	) {
+		// Redirect if you are not logged in
+		if (!this.auth.isLoggedIn) {
+			this.router.navigate([ '/home' ]);
+		}
+	}
 
-  // ======================================
-  //              Constructor
-  // ======================================
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private auth: AuthService,
-    private postService: PostService
-  ) {
+	// ======================================
+	//              Init
+	// ======================================
+	ngOnInit() {
+		// Get Data Post
+		this.getPost();
+	}
 
-    // Redirect if you are not logged in
-    if( !this.auth.isLoggedIn ) {
-      this.router.navigate(['/home']);
-    }
-  }
+	//=========================================
+	//            Consultants
+	//=========================================
+	getPost() {
+		const id = this.route.snapshot.paramMap.get('id');
 
-  // ======================================
-  //              Init
-  // ======================================
-  ngOnInit() {
-    // Get Data Post
-    this.getPost();
-  }
+		return this.postService.getPostData(id).subscribe((data) => {
+			this.id = data.id;
+			this.title = data.title;
+			this.content = data.content;
+			this.excerpt = data.excerpt;
+			this.thumbnail = data.image;
 
-  //=========================================
-  //            Consultants
-  //=========================================
-  getPost() {
-    const id = this.route.snapshot.paramMap.get( 'id' );
+			for (let i = 0; i < data.slider.length; i++) {
+				if (data.slider[i]) this.isSlider = true;
+				else this.isSlider = false;
+			}
 
-    return this.postService
-      .getPostData( id )
-      .subscribe( data => {
-        this.id         = data.id;
-        this.title      = data.title;
-        this.content    = data.content;
-        this.excerpt    = data.excerpt;
-        this.thumbnail  = data.image;
+			if (this.isSlider) this.slider = data.slider;
+		});
+	}
 
-        for( let i = 0; i < data.slider.length; i++)
-        {
-          if( data.slider[i] )
-            this.isSlider = true;
-          else
-            this.isSlider = false;
-        }
+	//=========================================
+	//            Modifiers
+	//=========================================
+	setUpdate() {
+		const id = this.route.snapshot.paramMap.get('id');
+		this.router.navigate([ '/escritorio/entrada/editar/' + id ]);
+	}
 
-        if( this.isSlider )
-          this.slider     = data.slider;
-      });
-  }
-
-  //=========================================
-  //            Modifiers
-  //=========================================
-  setUpdate() {
-    const id = this.route.snapshot.paramMap.get( 'id' );
-    this.router.navigate(["/escritorio/entrada/editar/" + id]);
-  }
-
-  setDelete() {
-    const id = this.route.snapshot.paramMap.get( 'id' );
-    this.postService.setDelete( id );
-    this.router.navigate(["/escritorio"]);
-  }
+	setDelete() {
+		const id = this.route.snapshot.paramMap.get('id');
+		this.postService.setDelete(id);
+		this.router.navigate([ '/escritorio' ]);
+	}
 }

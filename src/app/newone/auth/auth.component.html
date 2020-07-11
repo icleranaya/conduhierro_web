@@ -1,10 +1,11 @@
 <!------------------- SingIn ----------------------->
 <main class="singin">
 
-    <div class="container" style="background: url('assets/img/backgrounds/conduhierro_img_home_1.png') no-repeat top center / cover">
+    <div class="container"
+        style="background: url('assets/img/backgrounds/conduhierro_img_home_1.png') no-repeat top center / cover">
         <!-------****************************--------->
         <div class="bg-white"></div>
-        
+
         <!-------****************************--------->
         <form [formGroup]="authentication" (ngSubmit)="onSubmit()" class="wrapper-inputs">
 
@@ -12,7 +13,7 @@
 
             <!-------****************************--------->
             <label for="email" class="input-container">
-                <input type="text"  placeholder="&nbsp;" formControlName="email" require autofocus>
+                <input type="text" placeholder="&nbsp;" formControlName="email" require autofocus>
                 <span class="label">Correo electrónico</span>
                 <span class="border"></span>
             </label>

@@ -24,22 +24,22 @@
                     <div class="content-row">
 
                         <div class="title-product">
-                           
+
                             <h2 class="title din din-lg text-uppercase">{{ title }}</h2>
                             <p class="sub-title txt-Md">{{ excerpt }}</p>
                         </div>
 
                         <div class="product-gallery">
-                            
+
                             <div class="swiper-wrapper-container">
 
                                 <div class="swiper-pagination"></div>
                                 <!------------------- Slider ----------------------->
 
                                 <div class="swiper-container">
-                    
+
                                     <div class="swiper-wrapper"></div>
-                                    
+
                                 </div>
 
                                 <!---------------***** Slider *****----------------->
@@ -48,26 +48,26 @@
 
                             <!--------- Create Items Slider ---------->
                             <div class="items-gallery-slider">
-    
+
                                 <div id="gallery-{{ i }}" class="swiper-slide" *ngFor="let slide of slider; let i = index">
-                                
+
                                     <div class="wrapper-img">
                                         <img [src]="slide" alt="{{ title }}" class="thumbnail">
                                     </div>
-                                
+
                                 </div>
 
                                 <!-------****************************--------->
                                 <div id="gallery-4" class="swiper-slide">
-                                
+
                                     <div class="wrapper-img">
                                         <img [src]="thumbnail" alt="{{ title }}" class="thumbnail">
                                     </div>
-                                
+
                                 </div>
                             </div>
 
-                            
+
 
                             <ul class="next-img">
                                 <li class="img-thumb" *ngFor="let slide of slider; let i = index">
@@ -85,7 +85,7 @@
                                 <h2 class="title din din-lg text-uppercase">{{ title }}</h2>
                                 <p class="sub-title txt-Md">{{ excerpt }}</p>
                             </div>
-                            
+
                             <div class="description txt-Sm" [innerHTML]="content"></div>
 
                             <div class="aviable-btn">
@@ -187,19 +187,19 @@
                             <div class="contact-link txt-Sm">
 
                                 <fa-icon class="phone-icon" [icon]="faPhone"></fa-icon>
-                                <span class="txt-Sm font-weight-medium">0241-416.06.45</span>
+                                <span class="txt-Sm font-weight-medium">0123-456.78.90</span>
 
                             </div>
 
                             <div class="btn whatsapp-btn-container">
 
-                                <a class="whatsapp-btn txt-Sm" data-text="Escríbenos" href="https://wa.me/584144362573"
+                                <a class="whatsapp-btn txt-Sm" data-text="Escríbenos" href="https://wa.me/584124074888"
                                     target="_blank">
 
                                     <span class="btn-overlay" data-reactid="111"></span>
                                     <span class="btn-content">
                                         <fa-icon class="whatsapp-icon instagram-icon" [icon]="faWhatsapp"></fa-icon>
-                                        0414-854.65.25
+                                        0412-407.48.88
                                     </span>
 
                                 </a>
@@ -214,13 +214,13 @@
                         <!--------- Email-and-Info ------------>
                         <div class="contact-email">
                             <p class="generic-txt">o scribenos al correo:</p>
-                            <a class="email txt-Lg font-weight-bold" href="#">conduhierro@gmail.com</a>
+                            <a class="email txt-Lg font-weight-bold" href="#">contacto@icleranaya.dev</a>
                         </div>
 
                         <p class="info txt-XXSm font-weight-bold">
                             Nuestros horarios de atención al público
                             son de 8:00am a 12:00 pm y de
-                            1:00
+                            2:00
                             pm a
                             5:00 pm
                         </p>

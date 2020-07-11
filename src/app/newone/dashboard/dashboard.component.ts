@@ -16,7 +16,8 @@ import { AuthService } from '../core/auth.service';
 	templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
-	posts: Observable<Post[]>;
+    posts: Observable<Post[]>;
+    public pageActual: number = 1;
 
 	// ======================================
 	//              Constructor

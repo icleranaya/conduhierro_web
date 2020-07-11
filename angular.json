@@ -28,12 +28,12 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "node_modules/swiper/dist/css/swiper.min.css",
+                            "node_modules/swiper/swiper-bundle.min.css",
                             "src/styles.scss"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
-                            "node_modules/swiper/dist/js/swiper.min.js"
+                            "node_modules/swiper/swiper-bundle.min.js"
                         ]
                     },
                     "configurations": {
@@ -129,5 +129,8 @@
             }
         }
     },
-    "defaultProject": "conduhierro-web-v3"
+    "defaultProject": "conduhierro-web-v3",
+    "cli": {
+        "analytics": "b1d7f5bb-006f-41f7-92e5-f1dde61121ba"
+    }
 }
